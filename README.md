@@ -17,7 +17,7 @@ The skill is now active in your conversations.
 
 ## Marketing Skills
 
-### [`marketing-leadership.skill`](./marketing-leadership.skill)
+### [`marketing-leadership`](./skills/marketing-leadership)
 
 A coaching and reference skill based on the research in *The 12 Powers of a Marketing Leader* by Thomas Barta and Patrick Barwise. The book draws on the largest global study of marketing leadership ever conducted: 1,232 senior marketers, 67,278 360-degree assessments, and interviews with over 100 CMOs and CEOs.
 
