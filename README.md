@@ -44,7 +44,13 @@ The skill gives Claude a working knowledge of the full framework so it can help 
 
 ## Other Useful Skills
 
-*More skills coming soon.*
+### [AI Marketing Skills by Eric Osiu](https://github.com/ericosiu/ai-marketing-skills)
+
+A collection of complete marketing and sales automation workflows for Claude Code. Includes 15+ skill categories covering growth experiments, sales pipeline automation, content operations, SEO optimization, and financial analysis.
+
+### [Marketing Skills by Corey Haines](https://github.com/coreyhaines31/marketingskills)
+
+A comprehensive library of AI agent skills for marketing tasks including conversion optimization, copywriting, SEO, analytics, and growth engineering. Designed to work with Claude Code, Cursor, and other AI coding agents for landing page optimization, email campaigns, paid advertising, and sales enablement.
 
 ---
 
