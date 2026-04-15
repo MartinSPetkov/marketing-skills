@@ -6,10 +6,11 @@ Skills work by giving Claude a detailed reference document to consult when you a
 
 ## How to install a skill
 
-1. Download the `.skill` file
-2. Go to [claude.ai](https://claude.ai) and open Settings
-3. Navigate to the Skills section
-4. Upload the `.skill` file
+1. Navigate to the skill folder (e.g., `marketing-leadership`)
+2. Copy the `SKILL.md` file and any files in the `references/` folder
+3. Go to [claude.ai](https://claude.ai) and open Settings
+4. Navigate to the Skills section
+5. Upload the `SKILL.md` file and reference files
 
 The skill is now active in your conversations.
 
