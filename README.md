@@ -8,7 +8,7 @@ Skills work by giving Claude a detailed reference document to consult when you a
 
 1. Navigate to the skill folder (e.g., `marketing-leadership`)
 2. Copy the `SKILL.md` file and any files in the `references/` folder
-3. Go to [claude.ai](https://claude.ai) and open Settings
+3. Go to [claude.ai](https://claude.ai) and open Customize 
 4. Navigate to the Skills section
 5. Upload the `SKILL.md` file and reference files
 
