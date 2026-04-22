@@ -20,25 +20,15 @@ The skill is now active in your conversations.
 
 ### [`marketing-leadership`](./skills/marketing-leadership)
 
-A coaching and reference skill based on the research in *The 12 Powers of a Marketing Leader* by Thomas Barta and Patrick Barwise. The book draws on the largest global study of marketing leadership ever conducted: 1,232 senior marketers, 67,278 360-degree assessments, and interviews with over 100 CMOs and CEOs.
+Based on *The 12 Powers of a Marketing Leader* by Thomas Barta and Patrick Barwise, drawing on a global study of 1,232 senior marketers and 100+ CMO interviews. Gives Claude the V-Zone framework, the three marketing-specific gaps (trust, power, skills), and the 12 Powers across four challenges: mobilizing your boss, your colleagues, your team, and yourself. Includes a 7-question diagnostic and practical actions for each Power.
 
-The skill gives Claude a working knowledge of the full framework so it can help you diagnose leadership problems, prioritize what to fix, and take specific action.
+Good for senior marketers working on C-suite influence, team performance, or their own leadership development.
 
-**What it covers:**
+### [`loved-pmm`](./skills/loved-pmm)
 
-- The V-Zone: the overlap between customer needs and company needs, and why expanding it is the central job of a marketing leader
-- The three gaps unique to marketing (trust, power, skills) and how each Power addresses them
-- All 12 Powers organized across four challenges: mobilizing your boss, your colleagues, your team, and yourself
-- Research weightings for each Power (how much each one contributes to business impact vs. career success)
-- A coaching diagnostic: 7 questions to identify your weakest Powers fast
-- Practical actions for each Power, drawn directly from the book's case studies and CMO interviews
+Based on *Loved: How to Rethink Marketing for Tech Products* by Martina Lauchengco (Wiley, 2022). Encodes her PMM methods: the Four Fundamentals (Ambassador, Strategist, Storyteller, Evangelist), the Product Go-to-Market Canvas, the Messaging Canvas, the Release Scale, and the CAST filter. Ships with blank templates, five worked examples (Netflix, iPhone, Pocket, Expensify vs Concur, a filled SaaS PGTM), and an anti-patterns index.
 
-**Good for:**
-
-- Senior marketers who want more influence at the C-suite level
-- CMOs and Heads of Marketing working on team performance or internal alignment
-- Marketers preparing for leadership roles
-- Anyone who wants a structured way to think about their own marketing leadership development
+Good for PMMs doing messaging audits, positioning, launch tiering, pricing, hiring, or org design. PMM leaders dealing with "what product ships, sales can't sell"-style partnership breakdowns.
 
 ---
 

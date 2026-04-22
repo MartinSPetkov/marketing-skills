@@ -1,0 +1,254 @@
+{
+  "skill_name": "loved-pmm",
+  "description": "Test prompts for the loved-pmm skill. Each eval represents a realistic PMM question a user would bring to Claude. Assertions check that the skill routes to the right reference(s), grounds its answer in Lauchengco's frameworks, and avoids generic PMM advice.",
+  "evals": [
+    {
+      "id": 1,
+      "name": "new-pmm-hire-early-stage-startup",
+      "prompt": "I'm a founder at a 15-person B2B SaaS company. We've been live for 8 months. Our GTM feels scrappy and inconsistent. I want to hire my first product marketer. What kind of person should I look for, and what are the two or three most important things they should be doing in their first 90 days?",
+      "expected_behavior": "Should diagnose stage (ignition, based on the 8-month, 15-person detail), recommend director-level (not entry-level) per Ch 29, reference the signature interview question from Ch 27, and name the four fundamentals. Should NOT recommend a recent grad or 'content marketer who also does PMM.'",
+      "files": [],
+      "assertions": [
+        {
+          "text": "Correctly diagnoses the company as being in the Ignition stage (early, pre-repeatable GTM)",
+          "type": "content"
+        },
+        {
+          "text": "Recommends director-level PMM hire, not entry-level",
+          "type": "content"
+        },
+        {
+          "text": "References the four fundamentals (Ambassador, Strategist, Storyteller, Evangelist) or the underlying framework",
+          "type": "content"
+        },
+        {
+          "text": "Includes Lauchengco's signature interview question about great marketing from another company",
+          "type": "content"
+        },
+        {
+          "text": "First 90 days focuses on market sensing and segmentation, not launching campaigns",
+          "type": "content"
+        },
+        {
+          "text": "Cites or closely paraphrases Lauchengco (not generic PMM advice that could come from any source)",
+          "type": "content"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "messaging-rewrite-b2b-platform",
+      "prompt": "Can you rewrite this for me? It's our home-page hero copy: 'Our comprehensive, AI-powered platform seamlessly empowers go-to-market teams to drive transformative revenue outcomes through intelligent automation and data-driven insights.' Tell me what's wrong with it first.",
+      "expected_behavior": "Should identify the specific slop problems (banned words like 'comprehensive,' 'seamlessly,' 'empowers,' 'transformative'; synonym stacking; company POV; no differentiation; no testable claim). Should apply CAST filter. Should ask what the product actually does before rewriting, OR offer multiple rewrites based on plausible guesses. Should NOT just produce another version of corporate slop.",
+      "files": [],
+      "assertions": [
+        {
+          "text": "Identifies the copy as company-POV, not customer-POV",
+          "type": "content"
+        },
+        {
+          "text": "Flags specific banned/slop words by name (comprehensive, seamless, empower, transformative, or similar)",
+          "type": "content"
+        },
+        {
+          "text": "References CAST filter (Clear, Authentic, Simple, Testable) or its components",
+          "type": "content"
+        },
+        {
+          "text": "Asks at least one clarifying question about what the product actually does, who it's for, or what's different about it",
+          "type": "content"
+        },
+        {
+          "text": "Rewrite (if provided) avoids all the banned words flagged in the critique",
+          "type": "content"
+        },
+        {
+          "text": "References the messaging-process.md or messaging-canvas.md reference file",
+          "type": "content"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "is-this-a-launch",
+      "prompt": "My PM is pushing me to do a 'big launch' for a feature we're shipping in 3 weeks. It's a new integration with Salesforce. Existing customers will like it; it's a checkbox on some RFPs. But it's not a platform shift. I don't think it needs a launch. How do I push back?",
+      "expected_behavior": "Should introduce the Release Scale from Ch 12, walk the user through classifying this release (likely Level 3), explain the sprint/release/launch distinction, and give them language to use with the PM. Should NOT just agree or disagree. Should teach the framework.",
+      "files": [],
+      "assertions": [
+        {
+          "text": "Introduces or references the Release Scale framework (5 levels)",
+          "type": "content"
+        },
+        {
+          "text": "Classifies this specific release at Level 3 (or explains how to classify it)",
+          "type": "content"
+        },
+        {
+          "text": "Distinguishes between sprint, release, and launch as non-synonymous terms",
+          "type": "content"
+        },
+        {
+          "text": "Gives the user concrete language or questions to use with the PM, not just a framework",
+          "type": "content"
+        },
+        {
+          "text": "Offers to co-build the scale for their company or points to the release-scale-template.md asset",
+          "type": "content"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "competitor-winning-more-deals",
+      "prompt": "We're losing about 40% of our deals to a specific competitor this quarter. Last quarter it was 20%. Sales says their product is more 'modern-feeling.' Marketing says it's a messaging problem. Product says sales isn't qualifying well. Who's right?",
+      "expected_behavior": "Should recognize this as the mature-company competitive pattern from Ch 29 (sales qualification + positioning + evidence + tools all likely need work), NOT pick one function to blame. Should recommend a diagnostic pass across multiple areas. Should mention competitive win rate tracking from pmm-metrics.md.",
+      "files": [],
+      "assertions": [
+        {
+          "text": "Refuses to pick a single culprit; frames this as a multi-function diagnostic",
+          "type": "content"
+        },
+        {
+          "text": "References the mature-company competitive response pattern (qualification, positioning, evidence, tools)",
+          "type": "content"
+        },
+        {
+          "text": "Mentions competitive win rate tracking as a diagnostic tool",
+          "type": "content"
+        },
+        {
+          "text": "Suggests at least one concrete next step (win/loss interviews, repositioning exercise, battle card refresh, or similar)",
+          "type": "content"
+        },
+        {
+          "text": "Does NOT provide generic 'here's how to analyze competitors' advice divorced from Lauchengco's framing",
+          "type": "content"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "pgtm-canvas-build",
+      "prompt": "Walk me through building a PGTM canvas for my company. We're a Series B developer tools company, 80 employees, $12M ARR, selling to engineering leaders at mid-market companies. We have one main competitor and two emerging ones.",
+      "expected_behavior": "Should use the PGTM canvas framework from Ch 19, walk through the six-step build from `references/product-gtm-canvas.md`, offer to co-build it interactively, start by asking about the customer row (not the product row), and reference `assets/pgtm-canvas-template.md` and `examples/pgtm-canvas-filled-saas.md`. Should NOT just list the four swim lanes and stop.",
+      "files": [],
+      "assertions": [
+        {
+          "text": "Introduces the four swim lanes (customer/environment, product, marketing strategies, activities)",
+          "type": "content"
+        },
+        {
+          "text": "Starts the build from the customer/environment row, not the product row",
+          "type": "content"
+        },
+        {
+          "text": "Offers to co-build the canvas interactively OR asks specific questions needed to fill in each row",
+          "type": "content"
+        },
+        {
+          "text": "References either the template asset or the filled SaaS example",
+          "type": "content"
+        },
+        {
+          "text": "Surfaces at least one common failure mode (e.g., product-first planning, untied activities, unlimited strategies)",
+          "type": "content"
+        },
+        {
+          "text": "Asks questions or collects information relevant to dev tools segment (DevX, developer champions, bottom-up motion)",
+          "type": "content"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "pricing-cost-plus-mistake",
+      "prompt": "Our CFO wants to price our new AI feature at cost plus 40%. Our infrastructure cost per user is about $8/month. She's proposing $11. I think we should charge $50. How do I make the case?",
+      "expected_behavior": "Should cite the cost-plus-for-software anti-pattern from Ch 17. Should introduce pricing as value engineering. Should ask about the VALUE the feature delivers (time saved, revenue enabled, cost avoided) before quoting a number. Should name the 'leaving 5x to 20x on the table' framing. Should offer a structured approach for the CFO conversation.",
+      "files": [],
+      "assertions": [
+        {
+          "text": "Names the cost-plus-for-software pattern as an anti-pattern",
+          "type": "content"
+        },
+        {
+          "text": "Introduces or applies the value-engineering framing (price to value, not to cost)",
+          "type": "content"
+        },
+        {
+          "text": "Asks about the value the feature delivers (time saved, revenue enabled, cost avoided, or equivalent) before recommending a number",
+          "type": "content"
+        },
+        {
+          "text": "Does NOT pick one price over the other without first gathering value information",
+          "type": "content"
+        },
+        {
+          "text": "Structures a specific approach for the CFO conversation (willingness-to-pay research, value-based comparables, or similar)",
+          "type": "content"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "category-creation-question",
+      "prompt": "Our CEO wants to 'create a new category' for what we do. He's been reading Play Bigger. He says the existing category name (marketing automation) is stale and we should invent a new one (he likes 'revenue orchestration'). I'm skeptical. Am I wrong?",
+      "expected_behavior": "Should push back with Lauchengco's position from Ch 24: redefinition beats creation most of the time. Should reference the Create-vs-Redefine table and note that the redefinition column is longer. Should walk through the category-creation requirements list. Should bring up the Loudcloud cautionary example. Should tell the user to find the 'you are here' anchor and redefine from there. Should NOT just tell the CEO he's right.",
+      "files": [],
+      "assertions": [
+        {
+          "text": "States or closely paraphrases Lauchengco's view that redefining existing categories usually beats creating new ones",
+          "type": "content"
+        },
+        {
+          "text": "Names the Loudcloud example or an equivalent cautionary case",
+          "type": "content"
+        },
+        {
+          "text": "Identifies the specific requirements for category creation (industry shift, emerging cohort, leadership, resources, luck, etc.)",
+          "type": "content"
+        },
+        {
+          "text": "Recommends finding the 'you are here' marker customers already use",
+          "type": "content"
+        },
+        {
+          "text": "Sides with the user's skepticism while giving them language to present the alternative to the CEO",
+          "type": "content"
+        },
+        {
+          "text": "Distinguishes category creation from brand differentiation (doesn't conflate them)",
+          "type": "content"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "pmm-metric-debate",
+      "prompt": "My VP of Marketing just set my PMM team's OKRs. She wants us measured on MQLs. This feels wrong but I can't articulate why. How should PMM actually be measured?",
+      "expected_behavior": "Should identify MQL-as-PMM-metric as an anti-pattern from Ch 13. Should introduce the longer-horizon metrics (category leadership, competitive win rate, organic evangelism, CAC trend, NPS). Should give the user language to push back. Should suggest a paired-metric approach (short-term operational + long-term strategic). Should reference the patience and persistence point from pmm-metrics.md.",
+      "files": [],
+      "assertions": [
+        {
+          "text": "Identifies MQLs-as-PMM-metric as an anti-pattern from the book",
+          "type": "content"
+        },
+        {
+          "text": "Introduces at least 3 alternative PMM metrics (competitive win rate, category leadership, CAC trend, organic evangelism, NPS, or equivalent)",
+          "type": "content"
+        },
+        {
+          "text": "Explains the rationale for longer-horizon metrics (PMM work takes longer to materialize)",
+          "type": "content"
+        },
+        {
+          "text": "Gives the user concrete language or structure for the pushback conversation",
+          "type": "content"
+        },
+        {
+          "text": "Suggests a paired or dual-horizon approach (not one-for-one swap)",
+          "type": "content"
+        }
+      ]
+    }
+  ]
+}
