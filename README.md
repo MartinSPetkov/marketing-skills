@@ -4,15 +4,15 @@ A personal library of skills for Claude. Each skill is a `.skill` file you can i
 
 Skills work by giving Claude a detailed reference document to consult when you ask it something relevant. Instead of relying on general training, Claude reads the skill and follows its specific instructions, frameworks, and examples.
 
-## How to install a skill
+## How to install a skill/plugin
 
 1. Navigate to the skill folder (e.g., `marketing-leadership`)
-2. Copy the `SKILL.md` file and any files in the `references/` folder
+2. Copy the `.md` or `.skill` or `.plugin` file and any files in the `references/` folder
 3. Go to [claude.ai](https://claude.ai) and open Customize 
-4. Navigate to the Skills section
-5. Upload the `SKILL.md` file and reference files
+4. Navigate to Skills or Plugins (only works on desktop)
+5. Upload the `.md` or `.skill` or `.plugin` file and reference files
 
-The skill is now active in your conversations.
+The skill/plugin is now active in your conversations.
 
 ---
 
@@ -29,6 +29,12 @@ Good for senior marketers working on C-suite influence, team performance, or the
 Based on *Loved: How to Rethink Marketing for Tech Products* by Martina Lauchengco (Wiley, 2022). Encodes her PMM methods: the Four Fundamentals (Ambassador, Strategist, Storyteller, Evangelist), the Product Go-to-Market Canvas, the Messaging Canvas, the Release Scale, and the CAST filter. Ships with blank templates, five worked examples (Netflix, iPhone, Pocket, Expensify vs Concur, a filled SaaS PGTM), and an anti-patterns index.
 
 Good for PMMs doing messaging audits, positioning, launch tiering, pricing, hiring, or org design. PMM leaders dealing with "what product ships, sales can't sell"-style partnership breakdowns.
+
+### [`obviously-awesome`](./skills/obviously-awesome)
+
+Based on *Obviously Awesome* by April Dunford. A practical set of positioning tools: the Positioning Canvas, a Positioning Audit, a Positioning Workshop flow, Competitive Alternatives mapping, Unique Value mapping, Market Framing, and a Sales Story builder—each with prompts and evals.
+
+Good for founders/PMMs doing positioning refreshes, competitive narrative work, sales enablement, and category/market context decisions.
 
 ---
 
