@@ -1,0 +1,81 @@
+{
+  "skill_name": "obviously-awesome:positioning-workshop",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We're a 4-year-old startup. We built what we thought was a better database — much faster at querying very large datasets than anything on the market. But every sales meeting turns into a 30-minute explanation of how we're different from Oracle, and we still lose most of those conversations. Our best customers are two large banks and a retail analytics firm who all say they use us to run analysis jobs that used to take hours and now take minutes. They love us. But new prospects keep saying they already have a database. Help us figure out what's going wrong and walk us through the positioning process.",
+      "expected_output": "The skill should identify this as a classic default positioning trap (positioning as 'database' when the product is actually better described as a 'data warehouse' or analytics platform). Should walk through Steps 1-3 explicitly, identify the positioning baggage (built as a database, positioned as a database), surface the competitive alternatives from the customer perspective (other data warehouses, not Oracle), and begin Step 4. Should produce a clear diagnosis before starting the process.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "identifies-positioning-trap",
+          "description": "The skill correctly identifies that the product is suffering from Trap 1 (default positioning) — positioned as a database when customers use it as an analytics/warehousing tool"
+        },
+        {
+          "name": "starts-from-best-customers",
+          "description": "Step 1 correctly anchors to the happy customers (banks, retail analytics firm) as the lens for the exercise"
+        },
+        {
+          "name": "surfaces-positioning-baggage",
+          "description": "Step 3 explicitly names the 'database' framing as positioning baggage and gets agreement to treat it as a hypothesis"
+        },
+        {
+          "name": "reframes-competitive-alternatives",
+          "description": "Step 4 surfaces that competitors should be data warehouses and BI tools, not Oracle, based on what customers actually compared them to"
+        },
+        {
+          "name": "process-order-maintained",
+          "description": "Steps proceed in order 1-2-3-4 without skipping or combining prematurely"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I'm doing a positioning workshop for a startup that built industrial robots. Their robots don't just sit in one place and do repetitive tasks like typical manufacturing robots — they move around the factory floor intelligently, mapping the space and dispatching themselves to deliver materials where they're needed. They've been pitching themselves as 'robots' and getting confused looks from manufacturers who expect stationary arm-based automation. Their best customers love that the robots navigate like vehicles, not like machines. They use terms like 'dispatch', 'fleet management', and 'route optimization' when they talk about them. Walk me through the full 10-step positioning process with this product.",
+      "expected_output": "The skill should recognize this as a repositioning scenario where 'robot' is the wrong category — the product is better understood as an 'autonomous vehicle' or 'self-driving industrial vehicle'. Should work through all 10 steps, identify mobility/navigation/autonomous movement as the key attributes, map them to value (materials delivery efficiency, no fixed infrastructure, adaptable routing), identify who cares most (logistics-heavy manufacturers, warehouses), and recommend a market frame away from 'robot' toward autonomous/self-driving vehicles.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "diagnoses-wrong-category",
+          "description": "Identifies 'robot' as the wrong market frame causing confusion — the product is better positioned as autonomous industrial vehicles"
+        },
+        {
+          "name": "uses-customer-language-as-signal",
+          "description": "Picks up on the customer language clues (dispatch, fleet management, route optimization) as indicators of the right category"
+        },
+        {
+          "name": "completes-value-mapping",
+          "description": "Produces a feature → benefit → value translation for the mobility/navigation capabilities"
+        },
+        {
+          "name": "recommends-market-frame",
+          "description": "Recommends a specific market frame shift (toward autonomous vehicles / self-driving industrial vehicles) with rationale"
+        },
+        {
+          "name": "identifies-who-cares-most",
+          "description": "Step 7 identifies specific customer characteristics that predict high affinity — e.g., manufacturers with complex intra-facility logistics, high labor costs, or variable material flow"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Quick question: should we position our product for customers or for investors? We're pitching VCs next month and also need to update our website. Can we use the same positioning for both?",
+      "expected_output": "The skill should clearly explain that investor positioning and customer positioning are different and should not be combined. Investors buy into the future vision of a large, fast-growing market. Customers buy a solution to an immediate problem. The workshop process produces customer positioning only. Should recommend the user keep them separate and offer to run the customer positioning process.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "distinguishes-investor-vs-customer",
+          "description": "Clearly explains why investor positioning and customer positioning serve different purposes and cannot be the same document"
+        },
+        {
+          "name": "does-not-run-mixed-exercise",
+          "description": "Refuses to blend investor and customer positioning into one output"
+        },
+        {
+          "name": "offers-customer-path",
+          "description": "Offers to proceed with customer positioning specifically and explains what that process produces"
+        }
+      ]
+    }
+  ]
+}

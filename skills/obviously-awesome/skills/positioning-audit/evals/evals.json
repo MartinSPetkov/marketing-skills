@@ -1,0 +1,77 @@
+{
+  "skill_name": "obviously-awesome:positioning-audit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We need to audit our positioning. Here's what we have:\n\nCompany: Eloqua (marketing automation, circa 2009-2010)\nCurrent positioning canvas:\n- Market category: Marketing automation\n- Primary competitive alternative: Manual email campaign management and spreadsheet-based lead tracking\n- Unique attributes: Multi-touch campaign orchestration, lead scoring, CRM integration\n- Value themes: (1) Marketing can run complex, multi-step campaigns without IT involvement; (2) Sales gets leads that are pre-scored and ready to contact; (3) Full attribution from campaign to closed deal\n- Who cares a lot: B2B marketing teams at mid-to-large companies running demand generation\n\nWhat's changed in the last 18 months:\n- Marketo launched and is gaining ground fast, specifically targeting the same mid-market B2B segment\n- HubSpot launched and is positioning around 'inbound marketing' as a new category\n- Our win rates against Marketo are declining in deals above $100k ACV\n- We're still winning the segment below $50k ACV comfortably\n- Sales reps are starting to use 'enterprise marketing automation' to differentiate from Marketo in larger deals\n- The 'inbound marketing' framing HubSpot is using keeps coming up in discovery calls from prospects who have been reading their content\n\nAudit the positioning and tell us what needs to change.",
+      "expected_output": "The audit should identify: (1) The competitive alternatives component needs updating -- Marketo is now a primary competitor in the mid-to-large segment, changing the nature of competitive differentiation from 'versus manual processes' to 'versus another marketing automation platform'; (2) The market category choice is now contested -- HubSpot's 'inbound marketing' frame is gaining mindshare among buyers and needs a response; (3) The 'who cares a lot' profile is implicitly splitting into two segments (mid-market sub-$50k where Eloqua still wins clearly, and enterprise $100k+ where a different value case may be needed); (4) The differentiation score should be Medium because Marketo has closed some attribute gaps; (5) Recommended action should be Targeted re-work on competitive alternatives and potentially market category, not full re-positioning -- the core value is sound but the competitive narrative needs updating for the upper segment.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "identifies-marketo-as-new-alternative",
+          "description": "Flags that Marketo now appears in the competitive alternatives component and is a different type of comparison than the original 'manual processes' primary alternative"
+        },
+        {
+          "name": "addresses-category-frame-threat",
+          "description": "Addresses HubSpot's 'inbound marketing' category as a frame competing with 'marketing automation' for buyer mindshare"
+        },
+        {
+          "name": "flags-segment-split",
+          "description": "Identifies that the 'who cares a lot' profile may be splitting and that the sub-$50k and $100k+ segments may need different positioning"
+        },
+        {
+          "name": "recommends-targeted-rework-not-full-reposition",
+          "description": "Recommends targeted re-work on specific components rather than a full re-positioning -- the core value is still sound"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "We built our positioning two years ago. We want to check whether it still holds.\n\nOriginal canvas:\n- Product: Sampler -- digital product sampling platform\n- Market category: Product sampling\n- Primary competitive alternative: In-store sampling programs (brand ambassadors, demo stations)\n- Unique attributes: Digital delivery to targeted consumers based on demographics and purchase history, measurable post-sample purchase conversion, national reach without field staff\n- Value themes: (1) Reach exactly the right consumers instead of whoever walks past the demo station; (2) Measure actual purchase lift from sampling, not just impressions; (3) Run national programs from a single platform without coordinating field staff\n- Who cares a lot: CPG brand managers at mid-to-large companies running new product launches, specifically those with regional-to-national expansion goals and measurement accountability to their CMO\n\nWhat's happened since:\n- Our customer base has grown from 40 customers to 200+\n- The new customers are much more varied -- we're now selling to smaller DTC brands, not just CPG\n- E-commerce has grown significantly and most of our newer customers are primarily online sellers who don't have in-store sampling programs at all\n- A few new competitors have launched digital sampling platforms, though none with our targeting depth\n- Our best customers (by retention and expansion) are still the original CPG profile, but they're now only 30% of our customer base\n- Win rates are strong overall but churn is higher among the DTC segment\n\nAudit this.",
+      "expected_output": "The audit should find: (1) The 'who cares a lot' component has drifted significantly -- the original profile (CPG, national expansion goals, measurement accountability) still describes best customers by retention metrics, but represents only 30% of the actual customer base; (2) The competitive alternatives component needs examination for the DTC segment -- DTC customers don't have in-store sampling programs, so the original primary alternative doesn't apply to them; (3) The value themes were built for CPG buyers and may not map to DTC buyers' actual priorities; (4) Accuracy scores Medium-Low because the canvas no longer describes most customers; (5) The recommendation should be Targeted re-work: either sharpen the 'who cares a lot' back to CPG (and acknowledge the DTC business is outside the core positioning) or make a deliberate decision to expand the positioning to serve both segments with differentiated value themes. Should NOT recommend treating the expanded customer base as the new positioning without examining whether DTC customers actually succeed.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "identifies-who-cares-drift",
+          "description": "Identifies that the 'who cares a lot' column no longer describes most customers, and distinguishes between the original best-fit profile and the expanded customer base"
+        },
+        {
+          "name": "questions-alternative-validity-for-dtc",
+          "description": "Flags that the primary competitive alternative (in-store sampling) does not apply to DTC customers, meaning Part 2 of the sales story would not land for 70% of current buyers"
+        },
+        {
+          "name": "links-churn-to-positioning-drift",
+          "description": "Connects the higher churn among DTC customers to a possible positioning mismatch rather than treating it as a product or CS problem"
+        },
+        {
+          "name": "avoids-describing-drifted-customers-as-new-target",
+          "description": "Does not simply update the 'who cares a lot' to describe current customers -- instead distinguishes between best-fit and all customers and recommends a deliberate decision"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "We want to audit our positioning but we don't have a canvas. We built our positioning about 18 months ago but it was never written down formally. Here's what I can tell you:\n\n- We sell cybersecurity software\n- We've been around 4 years\n- Revenue has grown from $2M to $8M ARR\n- We mostly sell to mid-market companies\n- Our main competitors are CrowdStrike and SentinelOne\n- Win rates have been declining for about 6 months\n\nCan you audit this?",
+      "expected_output": "The skill should not attempt a component-by-component audit because there is no canvas to audit against. Instead it should: (1) Explain that an audit requires a baseline positioning to test against -- without a canvas, the audit cannot determine what has drifted from what; (2) Identify what is missing: no competitive alternatives (CrowdStrike and SentinelOne are named but there is no indication of which deals they actually show up in or what alternative the best-fit customer uses), no unique attributes, no value themes, no 'who cares a lot' specifics; (3) Flag that 'mid-market cybersecurity' is a category membership claim, not positioning; (4) Note that the win rate decline is a symptom, not a diagnosis -- it could reflect positioning problems, sales execution problems, product gaps, or a competitive shift; (5) Offer two paths: reconstruct the implied positioning from available materials (sales deck, website, customer interviews) to create a baseline, or run the full positioning workshop. Should not invent positioning components to fill the gaps.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "refuses-to-audit-without-baseline",
+          "description": "Does not perform a component-by-component audit when there is no documented positioning to audit against"
+        },
+        {
+          "name": "identifies-missing-components",
+          "description": "Specifically names what information is absent and why each gap makes the audit impossible"
+        },
+        {
+          "name": "does-not-invent-positioning",
+          "description": "Does not infer or fabricate competitive alternatives, value themes, or target market characteristics from the limited information provided"
+        },
+        {
+          "name": "offers-two-concrete-paths",
+          "description": "Offers to either reconstruct positioning from available materials as a precursor to auditing, or to run the full positioning workshop"
+        }
+      ]
+    }
+  ]
+}

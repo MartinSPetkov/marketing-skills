@@ -1,0 +1,69 @@
+{
+  "skill_name": "obviously-awesome:market-frame",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We're a startup with a CRM that has one special feature no other CRM has: we can model complex multi-hop relationships between people, not just contact records. Our primary customers are investment banks. The broader CRM market is dominated by Salesforce. Our value themes are: (1) relationship capital visibility — knowing your firm's entire relationship network at a glance, (2) warm path discovery — finding the fastest route to a target executive through existing relationships, (3) compliance-ready audit trail for all relationship-based communications. What market frame should we use, and which positioning style?",
+      "expected_output": "The skill should recommend Big Fish, Small Pond positioning. The market frame should shift from 'CRM' (general, Salesforce comparison) to something like 'CRM for investment banking' or 'relationship intelligence for financial services.' Should explain that Head to Head against Salesforce is not viable for a startup, and Create a New Game is unnecessary because an existing category (CRM) can be subsegmented. Should identify investment banking as the valid subsegment because: their needs are distinct (relationship modeling is existentially important to deal sourcing), the needs are not being met by Salesforce, and the competitive moat is real (adding relationship modeling to Salesforce would confuse enterprise sales users).",
+      "files": [],
+      "assertions": [
+        {
+          "name": "recommends-big-fish-small-pond",
+          "description": "Correctly recommends Big Fish, Small Pond and not Head to Head or Create a New Game"
+        },
+        {
+          "name": "proposes-specific-subsegment",
+          "description": "Names 'investment banking' or 'financial services firms' as the specific subsegment, not a vague niche"
+        },
+        {
+          "name": "explains-why-not-head-to-head",
+          "description": "Explicitly explains why competing directly against Salesforce across the whole CRM market would fail"
+        },
+        {
+          "name": "notes-expansion-path",
+          "description": "Mentions the path to expand beyond investment banking once the niche is owned"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "We built a platform for storytelling that lets writers share stories and readers connect on mobile. We started as 'a social platform for reading and writing' but we've grown to 70 million monthly users and we've now proven we can help entertainment companies source story IP, build audiences for new shows, and use our data to guide adaptation decisions. Netflix and Sony are licensing stories from us. Our value themes are: (1) data-backed story discovery for entertainment companies, (2) built-in audience for new IP, (3) machine learning that predicts which stories will resonate at scale. What market frame should we use now?",
+      "expected_output": "The skill should recommend repositioning from 'social platform for reading/writing' to something like 'multi-platform entertainment company' or 'data-driven entertainment IP platform.' Should identify that the value themes around entertainment industry deal-making no longer fit the original social platform category. Should recommend Head to Head or a new category framing — this is a case where the company has evolved into a different market altogether. Should not recommend Big Fish Small Pond since the entertainment licensing opportunity is large. May note Create a New Game considerations since 'data-driven entertainment IP' is a genuinely new category.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "recommends-category-shift",
+          "description": "Correctly identifies that 'social reading platform' is no longer the right category for the company's current value"
+        },
+        {
+          "name": "frames-around-entertainment-industry",
+          "description": "Recommends a market frame that makes the entertainment company relationships and IP licensing value obvious"
+        },
+        {
+          "name": "considers-new-category-option",
+          "description": "Evaluates whether Create a New Game is appropriate given the novelty of the data-backed IP model"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "We're a database tools company — leader in our market with 800,000 users. We've been in the database tools category for 25 years. Our customers are developers and DBAs. DevOps is becoming a major trend in our customer base — everyone is trying to integrate databases into CI/CD pipelines. Should we change our market frame, or just add 'DevOps' to our positioning?",
+      "expected_output": "The skill should recommend Head to Head (stay in the category, they are the leader) plus a trend layer, not a market frame change. Should identify 'DevOps' / 'Database DevOps' as the relevant trend to layer on without abandoning the database tools category. Should explain: the category is well-established and they lead it, so abandoning it loses the incumbency advantage; the DevOps trend adds urgency and strategic positioning with buyers without requiring a category change. Should caution against over-indexing on the trend at the expense of clarity about what the product is.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "recommends-head-to-head-plus-trend",
+          "description": "Recommends staying in the category (Head to Head) and adding a trend layer, not switching categories"
+        },
+        {
+          "name": "names-database-devops-as-trend-layer",
+          "description": "Specifically identifies 'Database DevOps' or equivalent as the trend layer"
+        },
+        {
+          "name": "explains-incumbency-logic",
+          "description": "Explains why the market leader should not abandon their category position"
+        }
+      ]
+    }
+  ]
+}

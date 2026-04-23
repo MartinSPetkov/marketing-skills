@@ -1,0 +1,73 @@
+{
+  "skill_name": "obviously-awesome:sales-story-builder",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Build a sales story for our product using this positioning canvas:\n\nProduct: Janna Systems — CRM for investment banks\nMarket category: CRM for investment banks\nPrimary alternative: Spreadsheets + email for relationship tracking\nSecondary: Generic CRM like Siebel (present but not the right comparison)\nUnique attributes: Multi-hop relationship modeling, relationship strength scoring based on communication frequency, Bloomberg Terminal integration\nValue themes: (1) Know your firm's full relationship network — not just direct contacts but second and third-degree connections through colleagues; (2) Find the fastest warm path to any target executive; (3) Compliance-grade audit trail for relationship activities\nWho cares a lot: Investment banking teams where deal sourcing depends on relationship access; senior bankers managing large pipelines\nTrend: None",
+      "expected_output": "The skill should produce a full six-part sales story written in pitch language. Part 1 should describe investment banking's competitive, relationship-driven deal flow environment. Part 2 should describe the limitations of spreadsheets and email for managing complex relationship networks across a team. Part 3 should describe the ideal: knowing at a glance who in your firm knows the CFO at Target Company, how strong that relationship is, and who should make the intro. Part 4 should introduce 'CRM for investment banks' as the category. Parts 5 should cover all three value themes with implied or real proof. Part 6 should propose a next step appropriate for a complex enterprise sale.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "follows-six-part-arc",
+          "description": "All six parts are present and in the correct order: problem context → current limitations → perfect world → product intro → value themes → next step"
+        },
+        {
+          "name": "delays-product-introduction",
+          "description": "The product is not mentioned until Part 4 — Parts 1-3 build context before introducing the solution"
+        },
+        {
+          "name": "maps-value-themes-to-proof",
+          "description": "Each value theme is accompanied by a specific example or metric, not just a generic claim"
+        },
+        {
+          "name": "pitch-language-not-outline",
+          "description": "Each part is written in complete, speakable sentences that a salesperson could actually say — not bullet points or structural labels"
+        },
+        {
+          "name": "includes-deck-structure",
+          "description": "Provides a slide-by-slide outline mapping the narrative to a presentation"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Build a sales story for this product: Redgate Software — database tools with a DevOps trend layer.\nMarket category: Database tools (incumbent leader in this category)\nPrimary competitive alternative: Manual database change management processes (scripts, tribal knowledge, manual reviews)\nValue themes: (1) Automate database change management across the development pipeline; (2) Enable compliance and audit trails for database changes; (3) Integrate databases into existing DevOps workflows without rework\nWho cares a lot: Development teams adopting DevOps, companies with strict database change compliance requirements (financial services, healthcare), teams that have had production incidents from untracked database changes\nTrend: DevOps adoption — development teams are standardizing CI/CD but databases are often the last manual step",
+      "expected_output": "The skill should produce a sales story that opens with the DevOps context (teams have streamlined everything except databases), identifies the pain of manual database change management as the current state, describes the perfect world (databases as a first-class citizen in the DevOps pipeline), introduces Redgate as database DevOps tooling, and covers the three value themes. The DevOps trend should appear in both the problem context and the 'why now' framing.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "integrates-trend-into-story",
+          "description": "The DevOps trend appears naturally in the narrative rather than as a tacked-on slide"
+        },
+        {
+          "name": "problem-context-specific",
+          "description": "Part 1 describes a specific, recognizable situation for DevOps teams — not generic database problems"
+        },
+        {
+          "name": "all-value-themes-covered",
+          "description": "All three value themes are addressed in Part 5 with differentiated framing"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "We want a sales story but we haven't built a positioning canvas yet. We just know we sell marketing automation software.",
+      "expected_output": "The skill should explain that it cannot build a sales story without positioning components — specifically the competitive alternative, value themes, and target customer definition. 'Marketing automation software' is a category, not a positioning. The story requires knowing what specific value the product delivers, to whom, and compared to what. Should offer to either (1) walk through the minimum components needed to build a basic story, or (2) recommend running the positioning workshop first.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "refuses-generic-story",
+          "description": "Does not produce a generic marketing automation sales story that could apply to any vendor in the category"
+        },
+        {
+          "name": "explains-what-is-missing",
+          "description": "Clearly identifies competitive alternative, value themes, and target customer as the missing components"
+        },
+        {
+          "name": "offers-path-forward",
+          "description": "Provides a concrete option for the user to move forward"
+        }
+      ]
+    }
+  ]
+}

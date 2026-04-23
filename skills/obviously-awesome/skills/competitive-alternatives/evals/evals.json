@@ -1,0 +1,69 @@
+{
+  "skill_name": "obviously-awesome:competitive-alternatives",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I'm a startup that sells CRM software specifically built for investment bankers. Our key feature is that we can model relationships between people — not just contacts — in a way that no other CRM can. Our sales team keeps positioning us against Salesforce and losing. But the deals we've won have all been at banks where the head of investment banking got excited about the relationship-mapping feature. When we ask those customers what they were using before, they say things like 'we had Salesforce but didn't really use it for this,' 'we had a shared spreadsheet of relationships,' or 'our bankers just kept mental notes and tracked things in email.' Help me identify our true competitive alternatives.",
+      "expected_output": "The skill should identify the primary alternative as manual processes / spreadsheets / email (what customers actually used), not Salesforce. Should explain the gap between the founder perspective (Salesforce) and the customer perspective (spreadsheets + manual). Should cluster alternatives: (1) manual tracking via email/spreadsheets/mental notes as primary, (2) Salesforce/generic CRM as a secondary (technically present but not the real comparison for the feature that matters), (3) possibly 'do nothing' for smaller firms. Should flag the misalignment between the sales team's competitive framing and reality.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "identifies-primary-alternative-correctly",
+          "description": "Identifies manual processes/spreadsheets/email as the primary alternative, not Salesforce"
+        },
+        {
+          "name": "flags-founder-customer-gap",
+          "description": "Explicitly calls out that the sales team is fighting the wrong battle by positioning against Salesforce"
+        },
+        {
+          "name": "validates-customer-perspective",
+          "description": "Uses the 'before they adopted your product' question to anchor the alternatives in customer reality"
+        },
+        {
+          "name": "produces-ranked-list",
+          "description": "Delivers a ranked list of 2-5 alternatives, not an unordered set"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "We sell a product sampling platform that lets consumer brands target digital product samples to specific consumers and track redemption. Most of our wins come from large CPG brands (L'Oreal, Kimberly-Clark type companies) who want to build direct relationships with consumers. When we ask them why they chose us, they say things like 'we were handing out samples in supermarkets and pharmacies with no way to know who got them or who bought,' 'we were sponsoring events and hoping for the best,' and 'we had no direct consumer data at all.' Who are our real competitive alternatives?",
+      "expected_output": "The skill should identify the primary alternative as traditional/physical product sampling (in-store, event-based, coupon inserts) — an offline, untargeted, untracked process. Should note that the alternatives include 'do nothing on direct-to-consumer' as a significant cluster. Should identify that digital sampling platforms as direct competitors are likely secondary — the real competition is the old way of doing it, not peer software companies. Should cluster: (1) traditional sampling programs (primary), (2) no direct-to-consumer strategy at all, (3) alternative digital marketing tactics (influencer, social ads), (4) peer digital sampling platforms as secondary.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "identifies-offline-as-primary",
+          "description": "Identifies traditional/physical sampling as the primary alternative, not software competitors"
+        },
+        {
+          "name": "includes-do-nothing-cluster",
+          "description": "Includes 'no direct-to-consumer strategy' as a meaningful alternative cluster"
+        },
+        {
+          "name": "uses-customer-quotes-as-evidence",
+          "description": "Uses the customer quotes provided as direct evidence for what alternatives were being used"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "We've identified our best-fit customers. Now help me build the competitive alternatives list. Our product is an API security testing tool that integrates directly into the CI/CD pipeline. Our best customers are DevSecOps teams at mid-market SaaS companies. They say they were 'running occasional pen tests,' 'using a consultant once a year,' and 'hoping nothing was broken.' A few of them evaluated Salt Security before choosing us.",
+      "expected_output": "The skill should produce a competitive alternatives list with: (1) manual/periodic pen testing and security consultants as the primary alternative, (2) 'do nothing / hope for the best' as a significant cluster (given the direct quotes), (3) Salt Security / Noname / similar tools as a secondary cluster for the subset that actually evaluates dedicated API security tooling. Should note that the primary alternative being manual/periodic testing rather than a software competitor has major implications for the value story — the comparison is 'us vs. once-a-year pen test' not 'us vs. Salt Security.'",
+      "files": [],
+      "assertions": [
+        {
+          "name": "prioritizes-manual-testing-as-primary",
+          "description": "Correctly identifies periodic pen tests and consultants as the primary alternative, not Salt Security"
+        },
+        {
+          "name": "includes-do-nothing",
+          "description": "Includes 'do nothing' or 'hope nothing is broken' as a real cluster based on customer quotes"
+        },
+        {
+          "name": "explains-implications",
+          "description": "Notes that the primary alternative being manual/periodic has implications for what 'better' means in the value proposition"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "skill_name": "obviously-awesome:positioning-canvas",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Here are all the components we've developed through the Dunford positioning process. Please build me the completed positioning canvas.\n\nProduct: Janna Systems CRM\nMarket category: CRM for investment banks\nCompetitive alternatives: (1) spreadsheets + email for tracking relationships (primary), (2) Siebel/generic enterprise CRM (secondary)\nUnique attributes: multi-hop relationship modeling, relationship strength scoring, Bloomberg Terminal integration\nValue themes: (1) relationship capital visibility — know your firm's entire network at a glance, (2) warm path discovery — find the fastest intro route to any target executive, (3) compliance-grade audit trail for relationship-based communications\nWho cares a lot: investment banks (deal sourcing depends on relationship access), firms managing large deal pipelines, senior bankers who work primarily on relationship-driven revenue\nRelevant trend: none identified",
+      "expected_output": "The skill should produce a clean, complete positioning canvas in structured table format with all five components populated. Should run quality checks and surface any gaps. Should note the 'no trend' decision as intentional. Should include next steps: sales story, messaging document, roadmap review. Should not require the user to do additional work — the canvas should be immediately shareable.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "produces-complete-canvas",
+          "description": "Canvas includes all five components: market category, competitive alternatives, unique attributes, value, who cares a lot"
+        },
+        {
+          "name": "uses-table-format",
+          "description": "Canvas is structured as a table showing the relationship between alternatives → attributes → value → who cares"
+        },
+        {
+          "name": "includes-quality-checks",
+          "description": "Runs at least the consistency check, proof check, and sales readiness check"
+        },
+        {
+          "name": "includes-next-steps",
+          "description": "Provides a clear list of what to build next from the canvas"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "We want to document our positioning but we haven't done the full Dunford process. Here's what we know: we sell a direct-to-consumer product sampling platform. Our competitors are traditional in-store sampling programs. Our unique feature is digital targeting — we can deliver samples to specific consumers based on demographics and interests. Can you build us a positioning canvas from this?",
+      "expected_output": "The skill should proceed but flag multiple gaps: competitive alternatives are incomplete (only primary listed, no 'do nothing' or digital alternatives), value has not been translated from the attribute (digital targeting → ?), 'who cares a lot' is not specified, market category is not stated. Should build a partial canvas with available information and clearly mark the gaps as [INCOMPLETE] or [VALIDATE], then ask for the missing pieces or recommend completing the earlier steps.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "flags-incomplete-components",
+          "description": "Explicitly identifies which components are missing or underdeveloped rather than inventing content to fill gaps"
+        },
+        {
+          "name": "builds-partial-canvas",
+          "description": "Produces a canvas with what is available rather than refusing entirely"
+        },
+        {
+          "name": "recommends-specific-gaps-to-fill",
+          "description": "Tells the user specifically what is missing and what earlier step would address it"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Build me a positioning canvas for our product. Here are the details: we make project management software.",
+      "expected_output": "The skill should refuse to build a canvas from this description alone. 'We make project management software' provides no competitive alternatives, no unique attributes, no value, no target customer characteristics, and no market category distinction. The skill should explain that a positioning canvas captures deliberate choices, not category membership, and ask the user to either provide the components or run through the positioning workshop first.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "refuses-to-fabricate",
+          "description": "Does not invent competitive alternatives, attributes, or value claims when the user provides insufficient input"
+        },
+        {
+          "name": "explains-what-is-needed",
+          "description": "Clearly explains what information is required to build a meaningful canvas"
+        },
+        {
+          "name": "offers-path-forward",
+          "description": "Offers to run the full positioning workshop or guides the user to provide the missing components"
+        }
+      ]
+    }
+  ]
+}

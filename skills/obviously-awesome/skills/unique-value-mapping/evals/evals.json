@@ -1,0 +1,69 @@
+{
+  "skill_name": "obviously-awesome:unique-value-mapping",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We've identified our competitive alternatives: most customers were using a combination of spreadsheets, manual data entry, and occasional pen-test consultants. Now I want to map our unique attributes to value. Our product is a B2B API security testing tool that integrates directly into CI/CD pipelines. Here are our unique attributes vs. those alternatives: (1) integrates into CI/CD pipeline, (2) automatically tests every API endpoint on every code push, (3) blocks vulnerable APIs from deploying, (4) generates compliance reports automatically, (5) we're the only vendor with SOC 2 Type II certification in this space. Our best customers are DevSecOps teams at fintech and healthcare SaaS companies that have 50+ microservices.",
+      "expected_output": "The skill should produce: a feature/benefit/value table translating each attribute (e.g., CI/CD integration → automated testing on every push → zero vulnerable APIs reach production without anyone having to remember to test), at least 2-3 clustered value themes (e.g., 'shift-left security' covering CI/CD + block on deploy, 'compliance automation' covering reports + SOC 2 cert), and segmentation criteria for who cares most (regulated industry companies, teams with frequent deployments, companies that have had a security incident, teams with no dedicated security staff). Should mark claims without proof as NEEDS PROOF.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "completes-three-level-translation",
+          "description": "Translates all 5 attributes through feature → benefit → value, reaching customer-goal level for each"
+        },
+        {
+          "name": "produces-value-themes",
+          "description": "Clusters attributes into 2-4 named value themes, not just a feature list"
+        },
+        {
+          "name": "identifies-segmentation-criteria",
+          "description": "Produces specific, actionable customer characteristics for who cares most — not just 'DevSecOps teams' but specific contextual factors"
+        },
+        {
+          "name": "flags-proof-gaps",
+          "description": "Marks at least some claims as needing proof or asks for evidence"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Our competitive alternatives are manual tracking via email and spreadsheets (primary) and generic CRM like Salesforce (secondary). Our product is a relationship intelligence tool for investment bankers. Unique attributes: (1) can model complex multi-hop relationships between people (e.g., John knows Sarah who is on the board of Company X), (2) surfaces relationship paths automatically from email/calendar data, (3) shows relationship strength scoring based on communication frequency, (4) integrates with Bloomberg Terminal. Map these to value themes and tell me who cares a lot.",
+      "expected_output": "The skill should produce value themes around: relationship capital visibility (knowing your firm's relationship network at a glance), warm path discovery (finding the right intro to a target company), and possibly data freshness/automation (relationships updated automatically vs. manual CRM entry). 'Who cares a lot' should identify: investment banking specifically (vs. all financial services), firms where deal sourcing depends on relationship access, senior bankers who need to know 'who knows who' before pitching a deal, and possibly firms managing large deal pipelines where manual tracking is failing.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "moves-beyond-features",
+          "description": "Value statements describe customer outcomes (win more deals, access the right relationships faster) not just product capabilities"
+        },
+        {
+          "name": "surfaces-investment-banking-specificity",
+          "description": "Identifies investment banking as a specifically high-fit segment, not just 'financial services' broadly"
+        },
+        {
+          "name": "connects-bloomberg-integration",
+          "description": "Bloomberg Terminal integration is correctly identified as a signal of who cares (people who already use Bloomberg)"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I want to do value mapping but I haven't defined competitive alternatives yet. Can we skip Step 4 and go straight to mapping features to value?",
+      "expected_output": "The skill should refuse to skip competitive alternatives and explain clearly why: attributes are only 'unique' relative to specific alternatives. Without knowing what customers compare the product to, the team cannot know which features are actually different. The skill should offer to help with competitive alternatives first (Step 4) and then return to value mapping.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "refuses-to-skip-step-4",
+          "description": "Does not proceed with value mapping without competitive alternatives defined"
+        },
+        {
+          "name": "explains-the-why",
+          "description": "Explains that 'unique' is relative — without a baseline comparison, there is no way to know what is genuinely different"
+        },
+        {
+          "name": "offers-path-forward",
+          "description": "Offers to run the competitive-alternatives skill first and then return"
+        }
+      ]
+    }
+  ]
+}
