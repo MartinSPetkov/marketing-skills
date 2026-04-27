@@ -1,8 +1,8 @@
 # Martin's Marketing Skills Collection
 
-A personal library of skills for Claude. Each skill is a `.skill` file you can install directly into Claude to extend what it knows how to do.
+A personal library of skills for Claude. Each skill is a `.skill` or `.plugin` file that you can install directly into Claude to extend what it can do.
 
-Skills work by giving Claude a detailed reference document to consult when you ask it something relevant. Instead of relying on general training, Claude reads the skill and follows its specific instructions, frameworks, and examples.
+Skills and plugins work by giving Claude detailed reference documents to consult when you ask it a relevant question. Instead of relying on general training, Claude reads the skill and follows its specific instructions, frameworks, and examples.
 
 ## How to install a skill/plugin
 
