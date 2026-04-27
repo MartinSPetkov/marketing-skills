@@ -1,0 +1,44 @@
+{
+  "skill_name": "superfan-funnel",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I have a food blog with about 8,000 monthly visitors. I have 340 email subscribers. My open rate is around 22%. I want to turn my readers into a real community. What should I do?",
+      "expected_output": "The skill should identify the primary gap (visitor-to-subscriber conversion is low — 340 subscribers from 8,000 visitors suggests a ~0.04% conversion rate). Should focus first on Stage 2 (reader to subscriber) before building community infrastructure. Should advise against jumping straight to a Discord or community platform. Should improve the subscriber conversion mechanism first, then tackle engagement. Working backward from a community target, the current list size is likely too small to support a real community.",
+      "files": [],
+      "expectations": [
+        "Calculates or estimates the current visitor-to-subscriber conversion rate and identifies it as the primary problem",
+        "Recommends Stage 2 improvements (opt-in placement, lead magnet, specific subscription promise) before community infrastructure",
+        "Explicitly advises against building a community platform at the current list size",
+        "Provides conversion math working backward from community target",
+        "Does not treat 22% open rate as the primary problem"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I have 12,000 newsletter subscribers and my open rate is 41%. About 200 people reply or engage with my content every month. I want to build a paid community around this newsletter. Am I ready? And how do I turn readers into paying members?",
+      "expected_output": "With 12,000 subscribers, 41% open rate, and 200 monthly engagements, this program is ready to attempt a paid community. Should validate the readiness with the engagement funnel math, recommend identifying the superfan group first (the most engaged 50-100 subscribers), soft-launching with a founding member cohort before opening broadly, and not starting with a full community platform until demand is confirmed. The path from subscriber to paying community member runs through superfan first.",
+      "files": [],
+      "expectations": [
+        "Affirms the program is at a reasonable size to attempt a paid community",
+        "Recommends identifying and engaging the top 50-100 most engaged subscribers first",
+        "Suggests a founding member soft-launch before a full open launch",
+        "Explains the superfan-to-paying-member pathway",
+        "Does not recommend opening a community platform to all 12,000 subscribers simultaneously"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "My newsletter has 2,800 subscribers and a decent open rate (35%), but almost no one replies or engages. I feel like I'm publishing into a void. How do I get more engagement?",
+      "expected_output": "This is a Stage 3 problem (subscriber to community member). The program has subscribers but is not converting them to community members. Should identify specific engagement mechanics: reply prompts at end of issues, recognition of responders in subsequent issues, direct outreach to top engagers. Should identify that the 'void' feeling often means the content is too broad or lacks a point of view that invites disagreement or response. Should NOT recommend adding a community platform or increasing publishing frequency.",
+      "files": [],
+      "expectations": [
+        "Identifies this as a Stage 3 problem (subscriber to community member)",
+        "Recommends specific reply prompt tactics with example questions",
+        "Addresses the likely root cause: content may lack a point of view that invites response",
+        "Does not recommend building a community platform as the solution",
+        "Recommends recognizing and publishing reader responses as a recurring section"
+      ]
+    }
+  ]
+}

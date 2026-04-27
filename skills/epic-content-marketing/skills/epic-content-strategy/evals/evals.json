@@ -1,0 +1,42 @@
+{
+  "skill_name": "epic-content-strategy",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I run a B2B SaaS company that makes project management software for architecture firms. We want to do content marketing but have no idea where to start. Our sales cycle is about 6 months and our main problem is that potential customers don't understand why a general tool like Asana won't work for them. Help me build a content strategy.",
+      "expected_output": "A complete strategy document with: a specific business goal (likely lead nurturing / education), an architecture firm persona (project manager or principal), a tight content tilt (something around the specific workflow or compliance needs of architecture that Asana ignores), a clear mission statement, an engagement cycle, and a channel plan. Should push back if the audience is too broad.",
+      "files": [],
+      "expectations": [
+        "Output includes a content tilt statement using the 'We are the only...' format",
+        "Output includes a content marketing mission statement with three parts: brand, content type, and audience outcome",
+        "Output includes an engagement cycle with subscription as an explicit milestone",
+        "Output passes all six-principles check",
+        "Output does not use banned words from anti-slop rules"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I'm a solo creator who makes pottery tutorials on YouTube. I have about 8,000 subscribers. I want to build a real content business around this but I'm not sure what my strategy should be. My goal is eventually to replace my day job income ($60k/year). Walk me through building a strategy.",
+      "expected_output": "Strategy built for a content entrepreneur (not a brand), with direct revenue as a primary goal. Should identify a tighter niche within pottery (beginner vs. advanced vs. specific technique), define the audience persona carefully, create a mission statement, and identify a subscription-first path to monetization. Should mention email list as the primary owned asset.",
+      "files": [],
+      "expectations": [
+        "Identifies email list as the primary owned subscription asset",
+        "Business goal is monetization-focused with a specific revenue proxy",
+        "Recommends narrowing the content tilt within pottery",
+        "Includes a mission statement in the three-part Pulizzi format"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "We're a mid-size healthcare company and the CMO wants us to 'do content marketing.' Our marketing team of 5 already creates blog posts, social media, email newsletters, webinars, and a quarterly print magazine. We're not sure what our strategy is — we just create a lot. Help.",
+      "expected_output": "The skill should identify this as a content operations problem (too many assets, no strategy behind them) as described in Chapter 4 of the book. It should ask about the primary business goal and audience before proposing a strategy. It should explicitly recommend consolidating around a primary platform and mission statement, not adding more channels.",
+      "files": [],
+      "expectations": [
+        "Identifies lack of strategy as the core problem, not lack of content",
+        "Asks for primary business goal before building strategy",
+        "Recommends consolidating around a primary platform and mission statement",
+        "Produces a six-principles check on the resulting strategy"
+      ]
+    }
+  ]
+}

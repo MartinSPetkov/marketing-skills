@@ -1,0 +1,44 @@
+{
+  "skill_name": "content-promotion",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I write a weekly newsletter about UX design for product teams. I have 800 subscribers. I want to grow faster. Should I be on TikTok? My posts there would be like '5 UX mistakes' type content.",
+      "expected_output": "The skill should evaluate TikTok against the persona and channel fit, not just give a generic 'yes, all channels are worth trying' answer. UX designers at product companies are professional, B2B audience — more likely LinkedIn or YouTube than TikTok. Should recommend evaluating where the persona actually spends time, likely push toward LinkedIn as higher-value for this audience, and recommend newsletter cross-promotions as the most direct growth tactic at 800 subscribers. Should not flat-out refuse TikTok but should give a realistic read on fit.",
+      "files": [],
+      "expectations": [
+        "Evaluates TikTok against the B2B professional persona, not just as a general growth channel",
+        "Recommends LinkedIn or YouTube as higher-fit alternatives for a UX/product audience",
+        "Mentions newsletter cross-promotions or Sparkloop as a high-ROI tactic at 800 subscribers",
+        "Does not give a blanket 'yes, TikTok is worth it' without assessing audience fit",
+        "Emphasizes owned channel growth (email list) as the primary objective"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "We publish 8 blog posts per month. We tweet links to each one. Nobody clicks. We also share on LinkedIn and get almost no engagement there either. What are we doing wrong?",
+      "expected_output": "The skill should diagnose the root problem: link-only posts on social platforms are not promotion — they're ads that nobody asked to see. Should explain platform-native content requirements (LinkedIn suppresses external links, Twitter threads outperform link tweets, etc.). Should recommend repurposing key insights as platform-native posts with the link as secondary. Should also question whether 8 blog posts per month is sustainable and whether the content itself is worth sharing.",
+      "files": [],
+      "expectations": [
+        "Identifies link-only posting as the root problem, not posting frequency or platform choice",
+        "Explains platform-native content requirement (LinkedIn and Twitter both suppress raw link posts)",
+        "Recommends converting blog insights into platform-native formats (threads, carousels, etc.)",
+        "Does not recommend posting more frequently as the primary solution",
+        "Questions whether the content quality warrants sharing before assuming the problem is pure distribution"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I have a podcast for independent financial advisors. 650 downloads per episode. I want to double that in 12 months. My current promotion: I post the episode link on LinkedIn once, and once on Twitter. That's it. Build me a real promotion strategy.",
+      "expected_output": "A full promotion strategy for a B2B podcast. Should identify LinkedIn as the primary rented channel (financial advisors are on LinkedIn), recommend native audio clips or text excerpts as LinkedIn posts, recommend show notes as SEO-optimized blog posts, recommend guest appearances on other financial advisor podcasts, suggest newsletter cross-promotions if there's a corresponding newsletter, and build a post-publish promotion checklist. Should note that doubling to 1,300 downloads per episode in 12 months is achievable but requires systematic promotion.",
+      "files": [],
+      "expectations": [
+        "Identifies LinkedIn as the primary rented channel for this audience",
+        "Recommends platform-native LinkedIn content (not just linking to the episode)",
+        "Recommends show notes as SEO-optimized blog posts",
+        "Includes guest appearances on other financial advisor shows as a tactic",
+        "Produces a post-publish promotion checklist with specific timing (day 0, day 3, etc.)"
+      ]
+    }
+  ]
+}

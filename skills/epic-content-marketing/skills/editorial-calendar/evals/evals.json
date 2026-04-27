@@ -1,0 +1,44 @@
+{
+  "skill_name": "editorial-calendar",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I write a weekly B2B newsletter for marketing ops professionals. I've been consistent for 6 months (every Thursday) but I run out of ideas halfway through each month and end up publishing filler content. Help me build an editorial calendar so this stops happening.",
+      "expected_output": "A calendar that solves the root problem (no theme structure, reactive topic selection) rather than just filling in dates. Should establish 2-3 content themes, produce a 6-8 week calendar, create a structured idea backlog system, and identify a production lead time the user can actually maintain. Should NOT add more content or increase frequency.",
+      "files": [],
+      "expectations": [
+        "Identifies lack of themes as the root cause, not lack of frequency or format",
+        "Produces a calendar table with at least 6 weeks of planned content",
+        "Includes an idea capture system with specific sources (FAQs, reader replies, etc.)",
+        "Does not recommend increasing publishing frequency",
+        "Each week maps to an engagement stage (awareness, consideration, subscription, conversion, loyalty)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I'm launching a content program from scratch. I want to publish 5 blog posts per week, a daily LinkedIn post, a weekly newsletter, and a monthly webinar. I have one part-time content writer. What should my editorial calendar look like?",
+      "expected_output": "The skill should push back hard on this production plan as unsustainable. Should explain the consistency-over-frequency rule, estimate realistic production capacity for one part-time writer, recommend a minimum viable content plan (probably 1 blog/week + 1 newsletter/week or similar), and build a calendar around the sustainable plan — not the aspirational one.",
+      "files": [],
+      "expectations": [
+        "Explicitly pushes back on the production plan as unsustainable with one part-time writer",
+        "Cites the consistency-over-frequency principle",
+        "Recommends a scaled-down plan the team can actually maintain for 24 months",
+        "Does not produce a calendar for the 5-posts-per-week plan without pushback",
+        "Final calendar reflects realistic capacity, not aspirational volume"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I run a podcast for HR leaders at companies with 200-500 employees. One episode per week. I've never planned more than 2-3 episodes ahead. Help me set up an editorial calendar with themes and plan the next 8 weeks.",
+      "expected_output": "An 8-week podcast editorial calendar with two monthly themes, each episode mapped to a content angle and engagement stage, plus a production workflow that accounts for podcast-specific lead times (recording, editing, show notes, promotion). Should include recurring segment recommendations to reduce planning load.",
+      "files": [],
+      "expectations": [
+        "Output covers 8 weeks of planned episodes in table format",
+        "Recommends recurring segments to reduce per-episode planning burden",
+        "Includes podcast-specific production workflow (record, edit, show notes, publish schedule)",
+        "Episodes map to engagement stages appropriate for a podcast audience",
+        "Suggests a buffer of 2-3 completed but unpublished episodes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "skill_name": "audience-persona",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I sell online courses on Excel and data analysis. My students are mostly people who work in finance or operations at mid-size companies and want to get promoted. Help me build an audience persona for my content marketing.",
+      "expected_output": "A specific persona with role (e.g., financial analyst or ops coordinator), experience level, career goals, pain points (likely: stuck in manual work, not recognized as analytical, being outpaced by peers who know SQL), content consumption habits, and a subscription question. Should identify the content gap — probably that existing Excel content is either too basic (tutorial sites) or too advanced (data science communities).",
+      "files": [],
+      "expectations": [
+        "Persona has a specific job title and experience level, not 'finance professional'",
+        "Includes a content gap section identifying what no existing source serves well",
+        "Includes a subscription question — what would make this person opt in",
+        "Passes the conference test (person can be identified at a specific event)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I run a nonprofit that helps single mothers in rural areas access childcare resources. Our audience is 'single moms' — is that specific enough for a content persona? Or do we need to narrow it down more?",
+      "expected_output": "The skill should identify that 'single moms' is too broad, and push for specificity: rural vs. urban, income bracket, access to technology, what their actual daily information problem is (finding a specific type of childcare? navigating benefits? advocacy?). Should produce a persona specific enough to pass the conference test.",
+      "files": [],
+      "expectations": [
+        "Explicitly identifies that 'single moms' is too broad for a content persona",
+        "Asks at least two clarifying questions before building the persona",
+        "Final persona is specific enough for the conference test",
+        "Includes pain points specific to the rural + childcare context"
+      ]
+    }
+  ]
+}

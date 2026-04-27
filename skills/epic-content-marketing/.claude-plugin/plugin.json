@@ -1,0 +1,22 @@
+{
+  "name": "epic-content-marketing",
+  "version": "1.0.0",
+  "description": "A 6-skill toolkit grounded in Joe Pulizzi and Brian Piper's Epic Content Marketing (2nd ed., 2023). Covers the complete Pulizzi framework: content strategy, audience personas, editorial calendars, measurement, community building, and promotion. Built for content marketers, founders, and brand publishers who want to think and operate like a media company.",
+  "author": {
+    "name": "Martin Petkov"
+  },
+  "keywords": [
+    "content-marketing",
+    "epic-content-marketing",
+    "pulizzi",
+    "editorial-calendar",
+    "audience-persona",
+    "content-measurement",
+    "content-strategy",
+    "superfans",
+    "community",
+    "content-promotion",
+    "owned-media",
+    "creator-economy"
+  ]
+}

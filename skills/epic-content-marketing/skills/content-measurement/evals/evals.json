@@ -1,0 +1,44 @@
+{
+  "skill_name": "content-measurement",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We've been doing content marketing for 18 months. We publish 3 blog posts per week and have a monthly email newsletter. Our CMO keeps asking if it's working and we don't have a good answer. We track pageviews (about 15,000/month) and social followers (about 2,400 on LinkedIn). What should we be measuring?",
+      "expected_output": "The skill should identify that pageviews and social followers are Layer 1/vanity metrics that don't answer the CMO's question. Should ask about the business goal before recommending a measurement plan. Should recommend tracking email subscribers (growth rate, not total size), content-influenced leads if CRM allows, and set up a ROO statement. Should explicitly say pageviews and follower counts are not useful for answering 'is it working.'",
+      "files": [],
+      "expectations": [
+        "Explicitly identifies pageviews and social followers as insufficient metrics for proving business value",
+        "Asks about or identifies the primary business goal before building a measurement plan",
+        "Recommends email subscriber growth rate as a primary metric",
+        "Includes a ROO statement or asks for inputs to build one",
+        "Produces a measurement plan table with pyramid layers"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I run a paid newsletter for independent financial advisors. 620 subscribers, $99/year. Open rate is 48%. I want to grow to 1,500 subscribers in 12 months. Help me set up a measurement framework.",
+      "expected_output": "A measurement plan for a content revenue business (not a marketing support function). Primary metrics should be subscriber count, monthly growth rate, churn rate, and revenue (620 × $99 = ~$61k ARR baseline). ROO should be tied to revenue: 1,500 subscribers × $99 = ~$148k ARR target. Should calculate baseline and target. Should NOT focus on Layer 4 sales metrics (this IS the product).",
+      "files": [],
+      "expectations": [
+        "Identifies this as a direct content revenue model, not a content-supports-sales model",
+        "Calculates current ARR baseline (620 × $99) and target ARR (1,500 × $99)",
+        "Includes churn rate / subscriber retention as a primary metric",
+        "Subscriber growth rate is the primary ROO metric",
+        "ROO statement is specific and includes dollar figures"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Our VP of Sales says content marketing is a waste of money because she can't see it contributing to pipeline. We have a blog, a weekly newsletter with 3,400 subscribers, and a podcast. How do we prove content is helping sales?",
+      "expected_output": "The skill should provide a plan for proving content-sales influence, not just defending content marketing. Should explain Layer 4 metrics (content-influenced pipeline, time-to-close comparison, subscriber vs. non-subscriber retention). Should recommend CRM tagging of content subscribers and a 90-day plan to start capturing data. Should acknowledge that this takes time — data from before tagging is implemented won't be retroactively available.",
+      "files": [],
+      "expectations": [
+        "Recommends CRM integration to tag content subscribers and track touchpoints",
+        "Explains content-influenced pipeline and how to calculate it",
+        "Recommends time-to-close comparison (subscribers vs. non-subscribers) as a key metric",
+        "Sets realistic expectations — data takes time to accumulate, no retroactive attribution",
+        "Does not claim content directly generates pipeline without evidence"
+      ]
+    }
+  ]
+}
