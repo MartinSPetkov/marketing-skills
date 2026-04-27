@@ -1,0 +1,48 @@
+{
+  "skill_name": "sheehan-launch-team",
+  "evals": [
+    {
+      "id": 1,
+      "name": "full-raci-tier-1",
+      "prompt": "We have a Tier 1 launch in 10 weeks. Can you set up the launch team alignment, including a RACI and an internal comms plan?",
+      "expected_output": "Response names a single launch lead (PMM). Produces a RACI covering all four GTM plan sections with at least 15 rows. Specifies meeting cadence (kickoff, weekly, monthly exec). Provides an internal comms timeline with at least 8 touchpoints. Includes sales enablement and CS enablement sections. Includes a debrief.",
+      "files": [],
+      "assertions": [
+        {"id": "single_lead", "text": "One named launch lead (PMM or equivalent)"},
+        {"id": "raci_has_A", "text": "RACI has exactly one Accountable per row"},
+        {"id": "raci_four_sections", "text": "RACI covers strategic readiness, external, sales enablement, internal comms"},
+        {"id": "meeting_cadence", "text": "Meeting cadence includes kickoff, weekly sync, monthly exec update"},
+        {"id": "internal_comms_timeline", "text": "Internal comms plan has a timeline from pre-launch through post-launch"},
+        {"id": "sales_cert_mentioned", "text": "Sales certification is included for Tier 1"},
+        {"id": "debrief_included", "text": "Post-launch debrief is scheduled"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "pmm-pm-conflict",
+      "prompt": "Our PMM and PM are both claiming they own the launch messaging and the customer research. How do I settle it?",
+      "expected_output": "Walks through the simple frame: PM owns the product, PMM owns the market. Applies to messaging: PMM is Accountable, PM is Consulted. Applies to research: PM owns discovery (what to build), PMM owns target-market research (how to sell). Recommends fixing it in the RACI and escalating unresolved cases to the exec sponsor.",
+      "files": [],
+      "assertions": [
+        {"id": "product_vs_market", "text": "Response names the split: PM owns product, PMM owns market"},
+        {"id": "messaging_accountability", "text": "Response says PMM is Accountable for messaging, PM is Consulted"},
+        {"id": "research_split", "text": "Response splits research: PM for discovery, PMM for target-market / launch research"},
+        {"id": "raci_resolution", "text": "Response recommends resolving via RACI"},
+        {"id": "escalation_path", "text": "Response names an escalation path (exec sponsor)"}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "startup-scale-down",
+      "prompt": "We're a 3-person startup. Do I really need a RACI and a launch kickoff meeting for our new tier launch?",
+      "expected_output": "Scales the framework down. Skip the RACI grid but still name owners in writing. Skip the exec update (exec team is the whole team). Skip sales certification (no reps). Don't skip: GTM plan, sales comm for handling inbound, CS outreach, debrief. Core principle: same questions, smaller answers.",
+      "files": [],
+      "assertions": [
+        {"id": "scales_down", "text": "Response tells the user to scale the framework down, not skip it"},
+        {"id": "skip_list", "text": "Response names things to skip: RACI grid, exec update, cert, PR agency, or similar"},
+        {"id": "keep_list", "text": "Response names things to keep: GTM plan, CS outreach, debrief, written ownership"},
+        {"id": "same_questions", "text": "Response states the principle that the questions stay the same even if deliverables shrink"}
+      ]
+    }
+  ]
+}

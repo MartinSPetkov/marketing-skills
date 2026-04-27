@@ -1,0 +1,9 @@
+{
+  "name": "sheehan-launch-pack",
+  "version": "0.1.0",
+  "description": "Product launch skills based on Mary Sheehan's The Pocket Guide to Product Launches (2023). Six skills covering GTM planning, customer research, team alignment, positioning and messaging, metrics, and launch timing.",
+  "author": {
+    "name": "Generated from Mary Sheehan's book",
+    "email": ""
+  }
+}

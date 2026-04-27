@@ -1,0 +1,51 @@
+{
+  "skill_name": "sheehan-launch-metrics",
+  "evals": [
+    {
+      "id": 1,
+      "name": "full-metrics-plan-b2b",
+      "prompt": "We're launching a new paid analytics tier for our B2B SaaS. Launch is 6 weeks away. Can you build us a full launch metrics plan?",
+      "expected_output": "Response walks through 3 Steps to Metrics Success: stakeholder success statements (at least 4 stakeholders), 5-7 metrics with numeric targets, windows, sources, and baselines, dashboard plan, reporting cadence (day 7, 30, 60, 90), and risks. No vanity metrics; each metric has a number.",
+      "files": [],
+      "assertions": [
+        {"id": "stakeholder_statements", "text": "Response produces success statements for at least 4 stakeholders (CEO, CMO, CRO, CPO, CS)"},
+        {"id": "metric_count", "text": "Metric set is 5-7 metrics, not 3 or 15"},
+        {"id": "numeric_targets", "text": "Every metric has a specific numeric target, not a verb"},
+        {"id": "windows_defined", "text": "Every metric has a measurement window (day 7, 30, 60, 90, etc.)"},
+        {"id": "sources_named", "text": "Every metric has a source named (CRM, Amplitude, etc.)"},
+        {"id": "baselines_present", "text": "Response includes baseline for each metric where available"},
+        {"id": "reporting_cadence", "text": "Reporting cadence covers day 7, 30, 60, 90 at minimum"},
+        {"id": "risks_section", "text": "Risks or pitfalls section is present"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "day-30-report-miss",
+      "prompt": "Our launch missed the signup goal badly (95 paid signups in 30 days versus pacing for 500 in 90 days). Press and adoption are ahead. Write the day 30 report.",
+      "expected_output": "Honest report using the day 30 template. Leads with the real read: behind on ARR/signups, ahead on press/adoption. Results table with target vs actual. What worked and what didn't, with specific causes. What we're changing, with concrete actions. Customer quotes. Thanks. Next checkpoint. Does not spin the miss.",
+      "files": [],
+      "assertions": [
+        {"id": "honest_headline", "text": "Headline leads with the real read, not spin"},
+        {"id": "results_table", "text": "Results table has target, actual, on-track per metric"},
+        {"id": "worked_didnt_sections", "text": "Both 'what worked' and 'what didn't' sections are present"},
+        {"id": "specific_causes", "text": "Causes for the miss are specific (e.g., deal cycle length, channel CPA), not vague"},
+        {"id": "concrete_changes", "text": "'What we're changing' has concrete actions"},
+        {"id": "next_checkpoint", "text": "Next checkpoint date is named"},
+        {"id": "no_spin", "text": "Report does not frame the miss as 'early momentum' or other spin"}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "vanity-metric-pushback",
+      "prompt": "Our CMO wants to use 'impressions' and 'total reach' as the primary launch metrics. Is that right?",
+      "expected_output": "Pushback on vanity metrics. Explains why impressions and reach are weak without downstream action. Suggests tying awareness goals to specific outcomes: direct traffic to launch page, branded search lift, press mentions in target pubs, MQL volume. Recommends pairing awareness with conversion metrics.",
+      "files": [],
+      "assertions": [
+        {"id": "pushes_back", "text": "Response pushes back on impressions/reach as primary metrics"},
+        {"id": "explains_why", "text": "Explains why: they don't tie to downstream action"},
+        {"id": "better_alternatives", "text": "Suggests specific alternatives: direct traffic, branded search, tier-1 press mentions, MQLs"},
+        {"id": "pairs_awareness_conversion", "text": "Recommends pairing awareness with conversion metrics"}
+      ]
+    }
+  ]
+}

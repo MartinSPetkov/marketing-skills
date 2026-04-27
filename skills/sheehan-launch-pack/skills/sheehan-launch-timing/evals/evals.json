@@ -1,0 +1,50 @@
+{
+  "skill_name": "sheehan-launch-timing",
+  "evals": [
+    {
+      "id": 1,
+      "name": "pick-launch-date-b2b-analytics",
+      "prompt": "I'm a PMM planning a Tier 1 B2B analytics product launch. The product will be GA-ready in mid-June. What launch date should I pick? Walk me through the reasoning.",
+      "expected_output": "A specific recommended date in mid-to-late June or early-to-mid July with reasoning that references day of week (Tuesday or Wednesday preferred), avoidance of WWDC (June), Cannes Lions (mid-June), Memorial Day, and Independence Day week, time of day (7-8am PT / 10-11am ET), and at least two cross-check questions to validate.",
+      "files": [],
+      "assertions": [
+        {"id": "names_day_of_week", "text": "Response recommends a Tuesday or Wednesday"},
+        {"id": "avoids_industry_events", "text": "Response names at least one industry event to avoid (WWDC, Cannes Lions, etc.)"},
+        {"id": "avoids_holiday_weeks", "text": "Response explicitly avoids Memorial Day and/or Independence Day week"},
+        {"id": "specifies_time", "text": "Response specifies a launch time in the 7-8am PT / 10-11am ET window"},
+        {"id": "cross_checks", "text": "Response lists at least two cross-check questions (e.g. competitor windows, exec availability)"},
+        {"id": "avoids_friday_monday", "text": "Response does NOT recommend launching on Monday or Friday"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "launch-day-runbook-tier-1",
+      "prompt": "Write me a launch day runbook for a Tier 1 B2B launch on Thursday, July 17, 8am PT. Include T-1 day, launch day hour by hour through T+8 hours, dress rehearsal plan, and go/no-go criteria.",
+      "expected_output": "A runbook with T-1 day tasks (asset freeze, staging review, war room setup), launch day timestamps at T-2 hours, T-1 hour, T-0, T+15 minutes, T+1 hour, T+4 hours, T+8 hours with named owners per task, a dress rehearsal scheduled at T-5 days with a 90-minute agenda, and 4-6 go/no-go criteria with exec sign-off.",
+      "files": [],
+      "assertions": [
+        {"id": "has_all_timestamps", "text": "Runbook includes T-1 day, T-0, T+1 hour, T+4 hours, and T+8 hours checkpoints"},
+        {"id": "has_dress_rehearsal", "text": "Runbook includes a dress rehearsal at T-5 days"},
+        {"id": "has_gono_go", "text": "Runbook includes go/no-go criteria reviewed before launch week"},
+        {"id": "has_war_room", "text": "Runbook names a war room channel or space"},
+        {"id": "has_named_owners", "text": "Tasks have named owners, not just 'team' or 'someone'"},
+        {"id": "has_asset_freeze", "text": "Runbook includes an asset freeze at T-1 day"}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "date-slip-recovery",
+      "prompt": "It's T-3 weeks from our Tier 1 launch. A sev-1 bug was just found and eng says it's a 2-week fix. Also, the VP of Marketing just told me the positioning isn't landing in customer interviews. What do I do?",
+      "expected_output": "A recommendation to slip the date. Specific reasoning that both issues together at T-3 weeks mean the launch won't land well. A concrete new date 3-4 weeks out. A plan covering: call a go/no-go immediately with exec sponsor, positioning reset work, press embargo renegotiation by calling each reporter individually, sales re-certification, go/no-go at the new T-1 week, and an explicit post-mortem commitment.",
+      "files": [],
+      "assertions": [
+        {"id": "recommends_slip", "text": "Response recommends slipping the date, not shipping on time"},
+        {"id": "names_new_date_range", "text": "Response names a concrete new date range (typically 3-4 weeks out)"},
+        {"id": "individual_press_calls", "text": "Response recommends individual calls to each reporter, not an email blast"},
+        {"id": "plans_recertification", "text": "Response includes sales re-certification on the new messaging"},
+        {"id": "plans_post_mortem", "text": "Response includes a post-mortem or debrief commitment"},
+        {"id": "does_not_ignore_positioning", "text": "Response does NOT recommend ignoring the positioning concern and shipping anyway"}
+      ]
+    }
+  ]
+}

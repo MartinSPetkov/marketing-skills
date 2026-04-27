@@ -1,0 +1,48 @@
+{
+  "skill_name": "sheehan-gtm-plan",
+  "evals": [
+    {
+      "id": 1,
+      "name": "b2b-saas-tier-1-from-scratch",
+      "prompt": "We're launching a new AI copilot feature in our HR SaaS product in 10 weeks. It's a major release. Can you build me a full GTM plan?",
+      "expected_output": "Full GTM plan in Markdown with all sections: go/no-go answers, Key Info with specific target market and NOT-for, tier decision (should be Tier 1 with reasoning), bundle decision, four checklist sections with owners and dates, rolling thunder plan. Goals must have numbers, not just verbs.",
+      "files": [],
+      "assertions": [
+        {"id": "has_gono_go", "text": "Plan includes the 5 go/no-go questions with yes/no answers and a launch recommendation"},
+        {"id": "has_key_info", "text": "Key Info section has all six fields: Who (market), Who (team), What (stage), When, Where, Why"},
+        {"id": "has_not_for", "text": "Key Info includes an explicit 'NOT for' line"},
+        {"id": "has_tier", "text": "Tier decision is stated with reasoning (not just 'Tier 1')"},
+        {"id": "has_bundle", "text": "Bundle decision is explicit (standalone or bundled with what/why)"},
+        {"id": "has_four_sections", "text": "Checklist covers all four sections: Strategic Readiness, External Promotion, Sales Enablement, Internal Launch Communications"},
+        {"id": "has_numeric_goals", "text": "Goals include at least one specific number (e.g. '500 accounts in 90 days'), not just verbs"},
+        {"id": "has_rolling_thunder", "text": "Rolling Thunder section is present with post-launch activities"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "should-i-launch-back-end-refactor",
+      "prompt": "Our engineering team just finished a six-month rewrite of our back-end data pipeline. It's faster and more reliable but customers won't see any UI change. Should we do a product launch?",
+      "expected_output": "A clear NO recommendation. The response should walk through the 5 go/no-go questions and explain that most are 'no' for an invisible back-end change. It should suggest an internal all-hands celebration instead of a public launch, and note that tier is not a function of engineering effort.",
+      "files": [],
+      "assertions": [
+        {"id": "recommends_no_launch", "text": "Response recommends NOT doing a public launch"},
+        {"id": "uses_five_questions", "text": "Response walks through the five yes/no questions explicitly"},
+        {"id": "suggests_internal_alternative", "text": "Response suggests an internal celebration or all-hands recognition instead"},
+        {"id": "mentions_effort_trap", "text": "Response mentions that engineering effort does not determine launch tier"}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "bundle-12-small-features",
+      "prompt": "I have 12 small features shipping in the next quarter. Each one alone feels too small for a real launch. What should I do?",
+      "expected_output": "Recommend bundling. Walk through bundle criteria (shared theme, shared persona, calendar moment). Suggest bucketing the 12 into 1-3 themed bundles. Reference the SocialChorus 'Innovation Lab' example implicitly or by name. Suggest tying to a customer event if one is upcoming.",
+      "files": [],
+      "assertions": [
+        {"id": "recommends_bundling", "text": "Response recommends bundling rather than 12 separate launches"},
+        {"id": "states_bundle_criteria", "text": "Response names the bundle criteria: shared theme, shared persona, calendar moment"},
+        {"id": "suggests_bucketing", "text": "Response suggests bucketing the features into themed groups"},
+        {"id": "suggests_event_tie", "text": "Response suggests tying the bundle to an event or calendar moment"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "skill_name": "sheehan-positioning-messaging",
+  "evals": [
+    {
+      "id": 1,
+      "name": "full-messaging-house-b2b",
+      "prompt": "We're launching a new HR compliance product for mid-market companies. Target is VP of HR at 200-1000 person companies. Key competitors are Rippling and Gusto. Can you build us a positioning statement and full messaging house?",
+      "expected_output": "A positioning statement filling all 6 blanks with specific content (target, need, product name, category, benefit, competitor, differentiation). A messaging house with a tagline, 2-4 pillars, each with headline, subhead, and 3+ proof points. Language notes and competitive watch-outs. Proof points include a mix of features, data, and customer-style quotes.",
+      "files": [],
+      "assertions": [
+        {"id": "positioning_complete", "text": "Positioning statement fills all 6 blanks specifically (no placeholders)"},
+        {"id": "specific_target", "text": "Target customer is specific, not 'companies' or 'HR professionals'"},
+        {"id": "tagline_exists", "text": "Tagline is present, 5-10 words"},
+        {"id": "pillar_count", "text": "2-4 pillars (not 1, not 5+)"},
+        {"id": "pillar_structure", "text": "Each pillar has headline, subhead, and at least 3 proof points"},
+        {"id": "mix_of_proof", "text": "Proof points include at least 2 different types: feature, data, quote, comparison"},
+        {"id": "language_notes", "text": "Language notes section with 'use' and 'avoid' lists is present"},
+        {"id": "competitive_watchouts", "text": "Competitive watch-outs section is present"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "positioning-statement-only",
+      "prompt": "Write me a positioning statement for a developer tool that helps backend engineers skip building auth from scratch. Competitors: Auth0, Clerk. Target: backend engineers at 10-100 person startups.",
+      "expected_output": "A single positioning statement in the template form: 'For [target] who [need], [product] is a [category] that [benefit]. Unlike [competitor], our product [differentiation].' All blanks filled with specific content. The benefit is measurable or concrete, not vague.",
+      "files": [],
+      "assertions": [
+        {"id": "uses_template", "text": "Response uses the Sheehan template structure"},
+        {"id": "specific_benefit", "text": "Benefit is specific (a number, a timeframe, or a concrete outcome), not 'better' or 'easier'"},
+        {"id": "names_competitors", "text": "Names Auth0 or Clerk explicitly in the competitor line"},
+        {"id": "real_differentiation", "text": "Differentiation is something the competitor can't easily claim"}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "workshop-agenda",
+      "prompt": "I need to run a 90-minute messaging workshop with our team. Can you give me the agenda?",
+      "expected_output": "A 90-minute agenda with time blocks covering: target market review, competitive alternatives review, brainstorm of what matters most, pressure-testing (true/different/matters/simple), drafting the positioning statement, and next steps. Attendee list 4-8 people. Pre-reads named.",
+      "files": [],
+      "assertions": [
+        {"id": "time_blocks_90min", "text": "Agenda fits within 90 minutes with time blocks that sum correctly"},
+        {"id": "target_review_block", "text": "Includes review of target market"},
+        {"id": "competitive_review_block", "text": "Includes review of competitive alternatives"},
+        {"id": "brainstorm_block", "text": "Includes brainstorm or inputs-gathering block"},
+        {"id": "pressure_test_block", "text": "Includes pressure-test or filter block (true, different, matters, simple)"},
+        {"id": "draft_statement_block", "text": "Includes drafting the positioning statement"},
+        {"id": "attendee_list", "text": "Attendee list is 4-8 people with named roles"},
+        {"id": "pre_reads", "text": "Pre-reads are named"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "skill_name": "sheehan-target-market",
+  "evals": [
+    {
+      "id": 1,
+      "name": "its-for-everyone-pushback",
+      "prompt": "Our CEO keeps saying our new product is 'for everyone who wants to be more productive.' How do I push back and figure out who it's actually for?",
+      "expected_output": "Response names the 'it's for everyone' problem, explains why it breaks launches (no TAM, no channels, no test for PMF), and walks through writing a specific starting hypothesis with role, company type, geography, behavior, motivation, and NOT-for. Recommends a research tactic (likely interviews) to validate.",
+      "files": [],
+      "assertions": [
+        {"id": "names_everyone_problem", "text": "Response explicitly calls out that 'everyone' means 'no one' or equivalent"},
+        {"id": "explains_consequences", "text": "Response explains at least 2 downstream problems: no TAM, no channels, can't test PMF, no messaging"},
+        {"id": "writes_hypothesis", "text": "Response produces a specific starting hypothesis with role, company, behavior, motivation"},
+        {"id": "includes_not_for", "text": "Hypothesis includes an explicit NOT-for list"},
+        {"id": "recommends_research", "text": "Response recommends a research tactic to validate the hypothesis"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "plan-interviews-two-weeks",
+      "prompt": "I have 2 weeks and no customer list. I need to validate our persona before we finalize launch messaging. What should I do?",
+      "expected_output": "Recommends LinkedIn outreach + recruitment panel (Vancery or similar). Gives a concrete plan with sample size (5-10 interviews), incentive amount ($50-100), and JTBD script reference. Should mention recording with consent and running at least some interviews personally.",
+      "files": [],
+      "assertions": [
+        {"id": "picks_fast_tactic", "text": "Response picks LinkedIn + recruitment panel or equivalent fast tactic for no-list scenario"},
+        {"id": "sample_size", "text": "Response specifies a sample size (at least 5, ideally 5-10)"},
+        {"id": "incentive_amount", "text": "Response specifies a concrete incentive amount"},
+        {"id": "references_script", "text": "Response references JTBD or a structured interview script"},
+        {"id": "consent_mention", "text": "Response mentions recording with consent"},
+        {"id": "pmm_runs_some", "text": "Response tells the user to run at least some interviews personally"}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "segmentation-three-or-four",
+      "prompt": "I ran 25 interviews. I think I have 6 different segments. Is that right?",
+      "expected_output": "Pushes back. More than 4 segments usually means the hypothesis was too broad or the user is splitting on axes that don't matter. Walks through the 'when to stop splitting' rule: if two segments have the same channels, messaging, and sales process, merge them. Recommends 2-4 segments for a launch.",
+      "files": [],
+      "assertions": [
+        {"id": "pushes_back", "text": "Response pushes back on 6 segments"},
+        {"id": "states_typical_range", "text": "Response states that 2-4 segments is typical"},
+        {"id": "merge_rule", "text": "Response describes the merge rule: same channels + messaging + sales process means not a separate segment"},
+        {"id": "prioritize_primary", "text": "Response recommends picking a primary segment for the launch"}
+      ]
+    }
+  ]
+}
