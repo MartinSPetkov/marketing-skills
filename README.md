@@ -42,6 +42,12 @@ Based on launch frameworks and playbooks from Katelyn Bourgoin / Mark Sheehan-st
 
 Good for PMMs/founders planning structured launches (tiering, sequencing, cross-functional ownership, enablement, and measurement).
 
+### [`epic-content-marketing`](./skills/epic-content-marketing)
+
+A content marketing “system” skill pack focused on building an audience and turning it into demand. Covers epic content strategy, audience personas, editorial calendars, content promotion/channel planning, measurement/metrics frameworks, and a superfan funnel—with evals, examples, and references.
+
+Good for content leads/founders building a repeatable content engine with clear distribution and measurement.
+
 ---
 
 ## Other Useful Skills
