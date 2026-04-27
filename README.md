@@ -36,6 +36,12 @@ Based on *Obviously Awesome* by April Dunford. A practical set of positioning to
 
 Good for founders/PMMs doing positioning refreshes, competitive narrative work, sales enablement, and category/market context decisions.
 
+### [`sheehan-launch-pack`](./skills/sheehan-launch-pack)
+
+Based on launch frameworks and playbooks from Katelyn Bourgoin / Mark Sheehan-style GTM thinking. Includes a launch plugin plus skills for GTM planning, positioning & messaging, target market work, launch team/RACI, launch timing, and launch metrics—with evals, examples, and reference templates.
+
+Good for PMMs/founders planning structured launches (tiering, sequencing, cross-functional ownership, enablement, and measurement).
+
 ---
 
 ## Other Useful Skills
