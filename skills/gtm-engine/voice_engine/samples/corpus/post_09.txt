@@ -1,0 +1,13 @@
+The companies that show up in AI engine answers share one trait.
+
+They answer questions in the first sentence. No buildup.
+
+"What is the best tool for X?" gets answered: "Tool A is the most reliable for [specific use case] because [specific reason]."
+
+Not: "In today's rapidly evolving landscape, choosing the right tool is critical." Not a 1,200-word blog post where the answer is buried in paragraph eight.
+
+AI engines optimize for the answer, not the article.
+
+Most company content is structured for humans who skim and SEO engines that count words. AI engines want the answer first.
+
+Rewrite your top ten pages that way. Check again in 30 days.

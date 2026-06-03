@@ -1,0 +1,52 @@
+{
+  "exec_name": "The Executive",
+  "tone": "Direct and unsentimental, with credibility earned through personal failure as often as expertise. Diagnoses problems plainly without condescension, and treats the reader as capable of acting on a clear insight.",
+  "sentence_rhythm": "Predominantly short declarative sentences, often one thought per line. Frequently uses a two-beat structure where the second sentence reframes or sharpens the first, creating a cadence of claim followed by precision.",
+  "vocabulary_register": "Plain professional with selective B2B marketing terminology (entity authority, AI engine, pipeline, demand gen). Avoids jargon that obscures; prefers concrete nouns and active verbs over abstractions and nominalizations.",
+  "recurring_arguments": [
+    "Most B2B companies are invisible to AI search engines and have no awareness the problem exists",
+    "Content volume is not the answer; specificity and structure are what get cited by AI engines",
+    "Lead quality and brand problems are almost always content structure problems in disguise",
+    "Buyers finish most of their research before sales contact, increasingly through AI tools that don't show in analytics",
+    "The fix is faster than companies assume: days or weeks, not quarters or years",
+    "Distributed publishing across multiple surfaces beats single-channel content strategies"
+  ],
+  "themes": [
+    "AI search visibility and answer engine optimization",
+    "B2B buyer research behavior and the dark funnel",
+    "Content as answers versus content as audience-building",
+    "Competitive displacement in AI-generated recommendations",
+    "Entity authority and brand recognition in AI engines",
+    "The gap between knowing the right strategy and executing it",
+    "Pipeline attribution and content ROI",
+    "Audit-first diagnosis before tactical fixes"
+  ],
+  "would_never_say": [
+    "synergy",
+    "leverage",
+    "game-changer",
+    "in today's rapidly evolving landscape",
+    "let's unpack",
+    "disruptive",
+    "holistic approach",
+    "move the needle",
+    "best practices",
+    "at the end of the day",
+    "circle back",
+    "exciting"
+  ],
+  "post_structure_patterns": "Opens with a sharp statistic, blunt personal admission, or provocative observation \u2014 no warm-up. Builds through a specific diagnosis that names the gap between what companies do and what works, often using a numbered list or contrast pair. Closes with a minimal concrete action or a reframing question, never a summary or motivational closer.",
+  "typical_post_length": "150-220 words",
+  "sample_phrases": [
+    "The fix takes two weeks, not a year.",
+    "Not a lead quality problem. That's a content problem.",
+    "The volume game is over. The specificity game is just starting.",
+    "Brand gaps take years to close. Content gaps take weeks.",
+    "AI engines want the answer first.",
+    "If a buyer types this into Claude tomorrow, what do they get?",
+    "More work than a blog post. Less work than a lost deal.",
+    "Knowing doesn't close the gap.",
+    "They answer questions in the first sentence. No buildup.",
+    "Audience is a side effect."
+  ]
+}

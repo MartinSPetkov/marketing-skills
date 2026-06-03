@@ -1,0 +1,11 @@
+When I help a company fix their AI search visibility, the audit has three parts.
+
+1. Entity authority: does the AI know you exist as a named entity? Not just your domain. Your company name, what you do, who you compete with, what problem you solve.
+
+2. Answer coverage: when buyers ask the questions they ask before a demo, do you show up with a direct answer?
+
+3. Competitor gap: for every query you're missing, who gets cited instead, and why?
+
+Most companies fail part one. The rest fail part two. Almost nobody does part three.
+
+Each part has a fix that takes days, not quarters.

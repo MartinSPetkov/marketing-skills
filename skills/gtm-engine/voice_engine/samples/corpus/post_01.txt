@@ -1,0 +1,16 @@
+68% of the B2B companies I've audited have no idea if AI search engines mention them.
+
+Not "working on it." Not "not yet." Just no awareness the question exists.
+
+Gartner puts AI-assisted browsing at 30% of sessions by 2026. Forrester puts buyer research time at 14 hours before first sales contact. Most of that research now happens in tools that don't show you the traffic.
+
+The visibility gap is real. The problem is that most companies are optimizing for Google while buyers have already moved.
+
+Three things I see in every audit:
+1. The company's own homepage answers none of the questions buyers actually type.
+2. Competitors with weaker products get named because they answer specific questions clearly.
+3. The fix takes two weeks, not a year.
+
+Most demand gen teams are still measuring impressions. The metric that matters now is whether an AI engine knows you exist and recommends you by name.
+
+Start there.

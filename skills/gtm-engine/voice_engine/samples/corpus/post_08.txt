@@ -1,0 +1,11 @@
+The question that changed how I think about content:
+
+"If a buyer types this into Claude tomorrow, what do they get?"
+
+Not "what should we rank for." Not "what does our persona care about." What does a buyer actually receive when they ask a real question.
+
+Try it. Pick the three questions your best prospects ask on discovery calls. Type each one into Claude or ChatGPT. See who answers.
+
+If it's not you, you have a content gap, not a brand gap.
+
+Brand gaps take years to close. Content gaps take weeks.

@@ -1,0 +1,11 @@
+The first thing I check when I audit a company's GTM: do they show up when I ask Claude "what are the best tools for [their category]?"
+
+Most don't.
+
+The second thing: do their competitors show up?
+
+Usually yes.
+
+That gap is not a brand problem or a budget problem. It's a content structure problem. AI engines cite sources that answer specific questions directly. Most company content isn't structured that way.
+
+The fix is not more content. It's a different kind of content.
