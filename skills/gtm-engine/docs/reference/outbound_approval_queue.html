@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Outbound engine: approval queue (dry run)</title>
+<style>
+  :root { color-scheme: light; }
+  body { font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1a1a1a; background: #f6f7f9; margin: 0; padding: 32px; }
+  .wrap { max-width: 980px; margin: 0 auto; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: #666; margin: 0 0 24px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px; }
+  .chip { background: #fff; border: 1px solid #e3e6ea; border-radius: 8px; padding: 10px 14px; }
+  .chip b { display: block; font-size: 20px; }
+  .chip span { color: #666; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+  table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #e3e6ea; border-radius: 10px; overflow: hidden; margin: 0 0 28px; }
+  th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid #eef0f2; vertical-align: top; }
+  th { background: #fafbfc; font-size: 12px; text-transform: uppercase; letter-spacing: .03em; color: #555; }
+  tr:last-child td { border-bottom: 0; }
+  .tier { font-weight: 600; }
+  .hot { color: #b42318; }
+  .warm { color: #b54708; }
+  .cool { color: #475467; }
+  .status { font-size: 13px; }
+  .booked { color: #067647; font-weight: 600; }
+  .stopped { color: #98a2b3; }
+  .preview { color: #475467; font-size: 13px; max-width: 320px; }
+  h2 { font-size: 16px; margin: 28px 0 10px; }
+  .panel { background: #fff; border: 1px solid #e3e6ea; border-radius: 10px; padding: 16px 18px; margin: 0 0 18px; }
+  .foot { color: #98a2b3; font-size: 12px; margin-top: 24px; }
+  .bar { height: 8px; background: #eef0f2; border-radius: 4px; overflow: hidden; }
+  .bar i { display: block; height: 100%; background: #067647; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Outbound engine: approval queue</h1>
+  <p class="sub">Dry run. Source: engagement on 3 posts. 12 engagements, 9 people, 6 qualified. Nothing has been sent.</p>
+
+  <div class="chips">
+    <div class="chip"><b>9</b><span>Leads scored</span></div>
+    <div class="chip"><b>6</b><span>Qualified</span></div>
+    <div class="chip"><b>3</b><span>Disqualified</span></div>
+    <div class="chip"><b>2</b><span>Booked</span></div>
+    <div class="chip"><b>3</b><span>In sequence</span></div>
+    <div class="chip"><b>1</b><span>Stopped</span></div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>#</th><th>Lead</th><th>Company</th><th>Fit</th><th>Intent</th><th>Tier</th><th>Source</th><th>Status</th><th>First touch (awaiting approval)</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td><td>Daniel Okoye<br><span class="status">Head of Growth</span></td><td>Brightloop (95)</td><td>9</td><td>9</td>
+        <td class="tier hot">Hot 92</td><td>P2 AI search</td><td class="status booked">Booked Thu</td>
+        <td class="preview">"Your comment on the AI search post stuck with me. Being invisible in ChatGPT for your category is fixable..."</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Elena Marsh<br><span class="status">VP Marketing</span></td><td>Flowstate (180)</td><td>9</td><td>9</td>
+        <td class="tier hot">Hot 90</td><td>P2 AI search</td><td class="status booked">Booked</td>
+        <td class="preview">"You asked how to measure AI search visibility. Short answer: you can, across ChatGPT, Claude, Perplexity, and Gemini..."</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Lena Hoffmann<br><span class="status">Head of Marketing</span></td><td>Driftwood (150)</td><td>9</td><td>8</td>
+        <td class="tier hot">Hot 84</td><td>P2 AI search</td><td class="status">In sequence (msg 1)</td>
+        <td class="preview">"You said you get cited sometimes but competitors more often. That gap is usually traceable to specific queries..."</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Aisha Bello<br><span class="status">CMO</span></td><td>Vantage Six (410)</td><td>9</td><td>7</td>
+        <td class="tier warm">Warm 80</td><td>P2 AI search</td><td class="status stopped">Stopped (not now)</td>
+        <td class="preview">"You reposted the AI search piece. If getting named by ChatGPT is on the roadmap, I can show you where Vantage Six stands..."</td>
+      </tr>
+      <tr>
+        <td>5</td><td>Sven Aalto<br><span class="status">Head of Growth</span></td><td>Tidemark (210)</td><td>8</td><td>6</td>
+        <td class="tier warm">Warm 72</td><td>P2 AI search</td><td class="status">In sequence (connection)</td>
+        <td class="preview">"Saw you on the AI search post. Quick question on how Tidemark shows up in ChatGPT for your category..."</td>
+      </tr>
+      <tr>
+        <td>6</td><td>Sofia Reyes<br><span class="status">Demand Gen Manager</span></td><td>Quanta (320)</td><td>8</td><td>6</td>
+        <td class="tier warm">Warm 70</td><td>P1 content</td><td class="status">In sequence (msg 1)</td>
+        <td class="preview">"On your question about the traffic dip: it held flat for three weeks, then climbed past the old peak..."</td>
+      </tr>
+      <tr>
+        <td>7</td><td>Marcus Feldt<br><span class="status">Content Marketing Manager</span></td><td>Northbeam (60)</td><td>7</td><td>4</td>
+        <td class="tier cool">Cool 58</td><td>P1 content</td><td class="status">Queued</td>
+        <td class="preview">"You liked the post on cutting output. Happy to share the before-and-after if it is useful for Northbeam..."</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Booked meetings</h2>
+  <div class="panel">
+    Daniel Okoye, Brightloop. Booked Thursday from a positive reply to message 1. Invite generated: bookings/booking_daniel_okoye.ics.<br>
+    Elena Marsh, Flowstate. Booked from a positive reply to message 1. Invite generated: bookings/booking_elena_marsh.ics.
+  </div>
+
+  <h2>Attribution: which posts produced pipeline</h2>
+  <div class="panel">
+    <p style="margin:0 0 8px;">P2, AI search visibility. 5 qualified, 2 booked.</p>
+    <div class="bar"><i style="width:100%"></i></div>
+    <p style="margin:14px 0 8px;">P1, content strategy. 2 qualified, 0 booked.</p>
+    <div class="bar"><i style="width:40%"></i></div>
+    <p style="margin:14px 0 8px;">P3, hiring. 0 qualified.</p>
+    <div class="bar"><i style="width:0%"></i></div>
+    <p style="margin:14px 0 0; color:#475467;">Read: the AI search post is the pipeline driver. Post more like it.</p>
+  </div>
+
+  <p class="foot">Dry run. Daily caps enforced: 25 connections, 40 messages. No messages were sent and no LinkedIn account was accessed. Live sending is a single optional route (Unipile) behind a flag and a key, with the same caps and an approval step.</p>
+</div>
+</body>
+</html>

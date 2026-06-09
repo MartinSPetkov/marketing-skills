@@ -1,132 +1,86 @@
 # GTM Engine
 
-Five standalone Python CLI tools that map to the B2B revenue loop: get found, score signal, run warm outreach, and trace every lead back to the content that surfaced it.
+Seven standalone Python CLI tools for B2B SaaS go-to-market. Each runs independently on a single command. They share a small common layer in `shared/` and follow the same conventions, so the repo reads as one system.
 
-Built on a Claude Pro or Max subscription. No API key, no per-token billing. Each tool runs from a single command.
+All model calls run on a **Claude Pro or Max subscription** — no API key, no per-token billing.
 
 ---
 
-## The five tools
+## The seven tools
 
-| Tool | What it does | Input | Key output |
-|---|---|---|---|
-| [`entity_auditor`](entity_auditor/README.md) | Audits a brand's entity authority — how recognisable it is to AI engines — and generates the assets to fix it | Brand name + URL | HTML report, Organisation JSON-LD |
-| [`pipeline_engine`](pipeline_engine/README.md) | Turns engaged contacts into a prioritised warm-outreach list and attributes each lead to the content that surfaced them | ICP file + engagement CSV | HTML dashboard, ranked leads CSV |
-| [`brief_generator`](brief_generator/README.md) | Turns a buyer-intent query into an AEO content brief and ready-to-paste JSON-LD schema | Query + company context | Markdown brief, schema `.jsonld` |
-| [`voice_engine`](voice_engine/README.md) | Turns a research finding into a 14-day LinkedIn sequence in a specific executive's voice, with a hard anti-slop gate | Post corpus + research input | 14 posts, before/after HTML |
-| [`research_engine`](research_engine/README.md) | Produces the front end of an original research report: insight angle, survey, outline, and personalised contributor invites | Research brief + contributor list | Full markdown package |
+### Demand creation
 
-The tools form a loop: `brief_generator` and `entity_auditor` get the brand found by AI engines → `voice_engine` and `research_engine` build content that produces engagement → `pipeline_engine` turns that engagement into pipeline and closes the attribution loop.
+| Tool | What it does | Run command |
+|---|---|---|
+| `entity_auditor` | Audits a brand's entity authority — how recognizable it is to AI engines — and generates the fix assets: JSON-LD schema and a structured data snippet | `python entity_auditor/entity_audit.py --brand "Acme" --url https://acme.com` |
+| `brief_generator` | Turns a buyer-intent query into an AEO content brief plus a ready-to-paste JSON-LD schema file | `python brief_generator/brief.py --query "best contract testing tools"` |
+| `voice_engine` | Turns a research input into a 14-day LinkedIn sequence in a specific executive's voice, with a hard anti-slop gate on every post | `python voice_engine/voice.py --input voice_engine/samples/voice_input.md` |
+| `research_engine` | Turns a category into the front end of an original research report: insight angle, survey, outline, and personalized contributor invites | `python research_engine/research.py --input research_engine/samples/research_input.md` |
+
+### Demand capture
+
+| Tool | What it does | Run command |
+|---|---|---|
+| `pipeline_engine` | Turns a list of engaged contacts into a prioritized, personalized warm-outreach list and attributes each lead to the content that surfaced them | `python pipeline_engine/pipeline.py --input pipeline_engine/samples/leads.csv --icp pipeline_engine/samples/icp.md` |
+
+### Outbound (two-tool family)
+
+| Tool | What it does | Run command |
+|---|---|---|
+| `outbound_engine` | Signal-to-meeting engine. Turns people who engaged with LinkedIn posts into scored leads, drafts a personalized multi-touch sequence referencing the exact post and comment, and books a meeting on a positive reply | `python outbound_engine/outbound.py run --config outbound_engine/samples/outbound_config.md --posts outbound_engine/samples/posts.csv --engagements outbound_engine/samples/engagements.csv --replies outbound_engine/samples/replies_fixture.csv --dry-run` |
+| `prospecting_engine` | Trigger-based cold outbound. Takes a list of target accounts, detects the strongest reason to reach out (AI-search gap, funding, new exec, launch), drafts a compliant personalized engagement plan, and runs every account through a sequence state machine | `python prospecting_engine/prospector.py run --config prospecting_engine/samples/prospector_config.md --accounts prospecting_engine/samples/target_accounts.csv --replies prospecting_engine/samples/replies_fixture.csv --dry-run` |
 
 ---
 
 ## Setup
 
-**Prerequisites:** Python 3.11+, Node.js (for the Claude CLI), a Claude Pro or Max subscription.
-
 ```bash
-# 1. Install the Claude CLI (one-time)
-npm install -g @anthropic-ai/claude-code
-
-# 2. Authenticate with your subscription
-claude login        # choose Claude.ai, log in with your Pro or Max account
-
-# 3. Confirm subscription is the active auth method
-claude /status
-
-# 4. Clone and install Python dependencies
-git clone https://github.com/your-org/gtm-engine.git
+# 1. Clone and install
+git clone <repo-url>
 cd gtm-engine
-python3 -m venv .venv
-source .venv/bin/activate      # Windows: .venv\Scripts\activate
+python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-# 5. Critical: ensure no API key overrides your subscription
-unset ANTHROPIC_API_KEY
+# 2. Authenticate with your Claude subscription
+claude login          # choose Claude.ai, sign in with your Pro or Max plan
+claude /status        # confirm "Subscription" is shown as the active auth method
+
+# 3. Make sure no API key is set
+unset ANTHROPIC_API_KEY   # must not be set — it silently switches billing to API
 ```
 
-Run `unset ANTHROPIC_API_KEY` in every new terminal before running the tools. If that variable is set, Claude Code bills your API account instead of your subscription.
-
----
-
-## Quick-start commands
-
-Run all commands from the repo root.
+No Anthropic API key is needed. The `claude` CLI must be installed and on PATH:
 
 ```bash
-# Audit entity authority for any public B2B SaaS site
-python entity_auditor/entity_audit.py --brand "Acme" --url "https://acme.com"
-
-# Score and prioritise an engagement list
-python pipeline_engine/pipeline.py \
-  --icp pipeline_engine/samples/icp.md \
-  --engagements pipeline_engine/samples/engagements.csv \
-  --sender "Your Name, Your Title"
-
-# Generate an AEO content brief
-python brief_generator/brief.py \
-  --query "best contract testing tools" \
-  --context brief_generator/samples/context.md
-
-# Generate a 14-day LinkedIn sequence
-python voice_engine/voice.py \
-  --corpus voice_engine/samples/corpus \
-  --research voice_engine/samples/research_input.md
-
-# Produce a research report front end
-python research_engine/research.py \
-  --input research_engine/samples/brief_input.md \
-  --contributors research_engine/samples/contributors.csv
-```
-
-Each tool ships with sample inputs so the commands above work out of the box.
-
----
-
-## Authentication
-
-All Claude calls go through `shared/llm.py`, which shells out to `claude -p` in headless mode. This uses your Claude Pro or Max subscription — no API key, no per-token billing.
-
-`shared/llm.py` checks for `ANTHROPIC_API_KEY` on startup and refuses to run if it is set. That variable silently reroutes billing to the API account. Keep it unset.
-
-Confirm your subscription is active before any run:
-```bash
-claude /status
+npm install -g @anthropic-ai/claude-code
 ```
 
 ---
 
-## How it works
+## How authentication works
 
-```
-shared/
-├── llm.py          ← all Claude calls go here (claude -p, subscription auth)
-├── fetch.py        ← URL fetch and parse (requests + BeautifulSoup)
-├── antislop.py     ← hard prose quality gate (detect violations + Claude rewrite)
-├── report.py       ← self-contained HTML report renderer
-└── adapters/
-    ├── engines.py  ← Claude active; OpenAI/Perplexity/Gemini stubbed
-    ├── search.py   ← URL discovery; manual input default
-    └── enrichment.py ← contact enrichment; manual input default
-```
-
-Every tool imports from `shared/`. No logic is duplicated. The adapter pattern means each tool works fully for free with the manual default, and a paid upgrade (Clay, Apollo, a search API) is a one-line config change.
+Every tool shells out to `claude -p "<prompt>"` via `shared/llm.py`. This uses your Pro or Max subscription, not a pay-per-token API key. If `ANTHROPIC_API_KEY` is set in the environment, Claude Code bills your API account instead — the tools check for this on startup and refuse to run if it is present.
 
 ---
 
-## Optional paid adapters
+## Adapter pattern — free by default, paid optional
 
-The tools work without any of these. Set environment variables to activate them.
+Every tool that could depend on a paid or external service uses an adapter in `shared/adapters/` with a working free default.
 
-| Adapter | Purpose | Variables |
+| Adapter | Free default | Optional paid upgrade |
 |---|---|---|
-| OpenAI / Perplexity / Gemini | Multi-engine AI queries in `brief_generator` and `entity_auditor` | `OPENAI_API_KEY`, `PERPLEXITY_API_KEY`, `GEMINI_API_KEY` |
-| Clay | Contact enrichment in `pipeline_engine` and `research_engine` | `CLAY_API_KEY` + `ENRICHMENT_SOURCE=clay` |
-| Apollo | Contact enrichment | `APOLLO_API_KEY` + `ENRICHMENT_SOURCE=apollo` |
-| CRM CSV | Contact enrichment from a CRM export | `ENRICHMENT_SOURCE=csv` + `CRM_EXPORT_PATH=...` |
-| Search API | URL discovery in `brief_generator` | `SEARCH_API_KEY` + `SEARCH_PROVIDER=brave\|exa\|serpapi` |
+| AI engine querying | Claude via subscription | OpenAI, Perplexity, Gemini (set key in `.env`) |
+| Search / URL discovery | Manual URL input | Brave, Exa, or SerpAPI |
+| Contact enrichment | Manual input from CSV | Clay, Apollo, or CSV export |
+| Live outbound sends | Dry-run only (staged) | Unipile API (LinkedIn + email + calendar) |
 
-See `.env.example` for the full list. Never set `ANTHROPIC_API_KEY`.
+Every tool runs fully for free. The paid path is a one-line config change, clearly labelled with `TODO` comments in the adapter files.
+
+---
+
+## Outputs
+
+All generated artifacts go to `outputs/` (gitignored). HTML reports are self-contained with inline CSS — open directly in a browser, no server needed.
 
 ---
 
@@ -134,27 +88,63 @@ See `.env.example` for the full list. Never set `ANTHROPIC_API_KEY`.
 
 ```
 gtm-engine/
-├── CLAUDE.md               ← shared conventions (read by Claude Code)
-├── README.md               ← this file
-├── antislop_rules.md       ← prose quality rules used by all tools
+├── CLAUDE.md                     # shared build instructions for Claude Code
+├── README.md
+├── antislop_rules.md             # prose quality rules (no em dashes, no filler, etc.)
 ├── requirements.txt
-├── test_shared.py          ← smoke test for the shared layer
-├── .env.example
+├── test_shared.py                # smoke tests for the shared layer
+│
+├── shared/                       # shared utilities, imported by all tools
+│   ├── llm.py                    # all Claude calls go here (subscription auth, no API key)
+│   ├── fetch.py                  # URL fetch + parse
+│   ├── antislop.py               # anti-slop gate: detects violations, rewrites via Claude
+│   ├── report.py                 # self-contained HTML report helper
+│   ├── scoring.py                # ICP fit scoring (pipeline_engine + outbound tools)
+│   ├── sequence.py               # sequence state machine (outbound_engine + prospecting_engine)
+│   ├── ai_visibility.py          # AI-search visibility gap helper (prospecting_engine)
+│   └── adapters/
+│       ├── engines.py            # Claude active; OpenAI/Perplexity/Gemini stubbed
+│       ├── search.py             # optional URL discovery; manual input default
+│       ├── enrichment.py         # optional contact enrichment; manual default
+│       └── outbound_send.py      # Unipile stub; dry-run by default
+│
+├── entity_auditor/               # entity authority audit + fix assets
+├── brief_generator/              # AEO content brief + JSON-LD schema
+├── voice_engine/                 # exec voice LinkedIn sequence
+├── research_engine/              # original research report front end
+├── pipeline_engine/              # warm-outreach list + content attribution
+├── outbound_engine/              # inbound engagement → scored leads → sequences → bookings
+├── prospecting_engine/           # cold outbound → triggers → engagement plans → bookings
+│
 ├── docs/
-│   └── BUILD_GUIDE.md      ← step-by-step build prompts
-├── shared/                 ← shared utilities (never copy into a tool)
-├── entity_auditor/
-├── pipeline_engine/
-├── brief_generator/
-├── voice_engine/
-├── research_engine/
-└── outputs/                ← all generated artifacts (gitignored)
+│   ├── USAGE.md                  # per-tool usage guide; terminal vs Claude Code chat
+│   ├── BUILD_GUIDE.md            # full build order and decisions
+│   └── reference/                # example outputs used as format targets during build
+│
+└── outputs/                      # generated artifacts (gitignored)
 ```
+
+Each tool directory contains:
+- One CLI entry point (e.g. `entity_audit.py`, `outbound.py`)
+- `README.md` with run command, pipeline stages, input format, and adapter table
+- `samples/` with everything needed to run the tool out of the box
+
+---
+
+## Honesty in output
+
+- No fabricated statistics, sources, citations, or quotes. Where a real source is needed, the output contains a clearly marked placeholder for the user to fill.
+- When a step is skipped because a paid key is missing, the tool says so in the console and in the output file. No silent degradation.
+- Outbound tools stage every action for human approval by default. Nothing is sent in dry-run.
 
 ---
 
 ## Rate limits
 
-Claude Pro limits are tighter than Max. A full run of `voice_engine` (14 posts + anti-slop rewrites) makes roughly 30 Claude calls — space them out or use Max if you hit a limit. The tools surface rate-limit messages plainly and tell you to wait rather than failing silently.
+Claude Pro limits are tighter than Max. A full run of one of the larger tools (voice_engine generating 14 posts, outbound_engine drafting sequences for 6 leads) may hit a rate limit after several Claude calls. When that happens, the tool prints the message and you can re-run after a short wait. Max subscribers can run the full suite back to back without spacing.
 
-> **Note (after June 15 2026):** subscription usage from `claude -p` is expected to draw from a separate monthly Agent SDK credit pool rather than the interactive limit. Still subscription billing, not API billing. Check `claude /status` to see current limits.
+---
+
+## Compliance note (outbound tools)
+
+Discovery in `prospecting_engine` is from the provided account list and public web research only — never LinkedIn scraping. Every LinkedIn action produced by both outbound tools is staged for human approval. The live send route (`--live` flag) uses a single sanctioned API (Unipile) with daily caps enforced in code. Specific, researched personalization is the compliance strategy: irrelevant volume is what triggers the spam reports that get accounts flagged.

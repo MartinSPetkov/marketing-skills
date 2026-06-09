@@ -28,6 +28,7 @@ from shared.llm import query_json, query_text
 from shared.fetch import fetch
 from shared.antislop import clean
 from shared.report import render, Section
+from shared.scoring import score_fit_batch
 from shared.adapters.enrichment import enrich_contacts
 
 
@@ -143,58 +144,16 @@ def enrich(leads: list[dict]) -> list[dict]:
 
 def score_fit(leads: list[dict], icp_text: str) -> list[dict]:
     print(f"\n[3/6] Scoring {len(leads)} leads against ICP (single batched call)...")
-
-    summaries = []
-    for i, lead in enumerate(leads):
-        snippet = (lead.get("_page_snippet") or "")[:300]
-        summaries.append({
-            "index": i,
-            "name": lead.get("name", ""),
-            "title": lead.get("title", ""),
-            "company": lead.get("company", ""),
-            "company_size": lead.get("company_size", "unknown"),
-            "page_snippet": snippet,
-        })
-
-    prompt = (
-        "You are a B2B sales qualifier. Score each contact against the ICP below.\n\n"
-        f"ICP:\n{icp_text}\n\n"
-        f"Contacts:\n{json.dumps(summaries, indent=2)}\n\n"
-        "Return a JSON array — one object per contact in the same order — with:\n"
-        "  index: same integer as input\n"
-        "  fit_score: integer 1-10 (10 = perfect ICP match)\n"
-        "  fit_reason: one plain sentence, max 15 words, no corporate filler\n"
-        "  disqualified: true if this contact clearly matches an ICP disqualifier\n"
-        "  disqualify_reason: short phrase if disqualified, else empty string\n\n"
-        "Be direct. Score only on what is stated in the ICP. Do not fabricate details."
-    )
-
-    results = query_json(prompt)
-
-    if not isinstance(results, list):
-        print("  [warning] Unexpected fit-scoring response. Defaulting scores to 5.")
-        results = [
-            {"index": i, "fit_score": 5, "fit_reason": "Unable to score.", "disqualified": False, "disqualify_reason": ""}
-            for i in range(len(leads))
-        ]
-
-    score_map = {r["index"]: r for r in results if isinstance(r, dict) and "index" in r}
-
-    for i, lead in enumerate(leads):
-        sc = score_map.get(i, {})
-        lead["fit_score"] = int(sc.get("fit_score", 5))
-        lead["fit_reason"] = sc.get("fit_reason", "")
-        lead["disqualified"] = bool(sc.get("disqualified", False))
-        lead["disqualify_reason"] = sc.get("disqualify_reason", "")
-        lead["outreach_message"] = ""
-
+    # Delegate to shared/scoring.py — same implementation used by prospecting_engine.
+    scored = score_fit_batch(leads, icp_text)
+    for lead in scored:
+        lead.setdefault("outreach_message", "")
         if lead["disqualified"]:
             status = f"DISQUALIFIED  ({lead['disqualify_reason']})"
         else:
             status = f"fit={lead['fit_score']}/10  {lead['fit_reason']}"
-        print(f"  {lead['name']:<28} {status}")
-
-    return leads
+        print(f"  {lead.get('name', ''):<28} {status}")
+    return scored
 
 
 # ── Stage 4: Warmth scoring ───────────────────────────────────────────────────

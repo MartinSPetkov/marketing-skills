@@ -69,8 +69,8 @@ def fetch(url: str) -> FetchResult:
     headings = _extract_headings(soup)
     jsonld = _extract_jsonld(soup)
     faq = _extract_faq(soup, jsonld)
+    links = _extract_links(soup, base_url=url)  # must run before _extract_body, which decomposes footer/nav
     body = _extract_body(soup)
-    links = _extract_links(soup, base_url=url)
 
     return FetchResult(
         url=url,

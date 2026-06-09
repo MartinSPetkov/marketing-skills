@@ -50,7 +50,7 @@ Good for content leads/founders building a repeatable content engine with clear 
 
 ### [`gtm-engine` (work in progress)](./skills/gtm-engine)
 
-Five standalone Python CLI tools that map to the B2B revenue loop: get found by AI engines, score engagement signal, run warm outreach, and attribute leads back to the content that surfaced them. Includes `entity_auditor` (entity authority + JSON-LD), `brief_generator` (AEO content briefs), `voice_engine` (14-day LinkedIn sequences with an anti-slop gate), `research_engine` (original research front end), and `pipeline_engine` (ICP-scored outreach + content attribution). Runs on a Claude Pro or Max subscription via the Claude CLI—no API key required.
+Seven standalone Python CLI tools for B2B SaaS go-to-market, sharing a common `shared/` layer. **Demand creation:** `entity_auditor` (entity authority + JSON-LD), `brief_generator` (AEO content briefs), `voice_engine` (14-day LinkedIn sequences with an anti-slop gate), `research_engine` (original research front end). **Demand capture:** `pipeline_engine` (ICP-scored warm outreach + content attribution). **Outbound:** `outbound_engine` (LinkedIn engagement → scored leads → multi-touch sequences → bookings) and `prospecting_engine` (trigger-based cold outbound with sequence state machine). Runs on a Claude Pro or Max subscription via the Claude CLI—no API key required.
 
 Good for B2B marketers and founders who want executable GTM workflows in the terminal or Claude Code, not just chat prompts. See [`skills/gtm-engine/README.md`](./skills/gtm-engine/README.md) for setup and quick-start commands.
 

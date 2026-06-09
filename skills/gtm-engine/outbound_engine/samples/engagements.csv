@@ -1,0 +1,13 @@
+engagement_id,name,title,company,company_size,profile_url,post_id,engagement_type,comment_text,engagement_date
+e01,Daniel Okoye,Head of Growth,Brightloop,95,https://www.brightloop.io/about,P2,comment,"This is exactly what we are seeing. We checked and we are invisible in ChatGPT for our category.",2026-05-26
+e02,Daniel Okoye,Head of Growth,Brightloop,95,https://www.brightloop.io/about,P1,like,"",2026-05-20
+e03,Elena Marsh,VP Marketing,Flowstate,180,https://www.flowstate.io/team,P2,comment,"How do you even measure AI search visibility? Is there a tool for this?",2026-05-27
+e04,Elena Marsh,VP Marketing,Flowstate,180,https://www.flowstate.io/team,P1,like,"",2026-05-19
+e05,Sofia Reyes,Demand Gen Manager,Quanta,320,https://quanta.app/team,P1,comment,"Cutting output in half is bold. Did organic traffic dip before it recovered?",2026-05-25
+e06,Aisha Bello,CMO,Vantage Six,410,https://vantagesix.com/leadership,P2,repost,"",2026-05-24
+e07,Marcus Feldt,Content Marketing Manager,Northbeam,60,https://northbeam.io/about,P1,like,"",2026-05-18
+e08,Tomas Lindqvist,Founder,Pebble,8,https://pebble.dev,P3,comment,"100 percent. Shippers every time.",2026-05-26
+e09,Jack Mercer,Sales Development Rep,Brightloop,95,https://www.brightloop.io/about,P3,like,"",2026-03-12
+e10,Lena Hoffmann,Head of Marketing,Driftwood,150,https://driftwood.io/about,P2,comment,"We get cited sometimes but competitors more often. Would love to understand why.",2026-05-23
+e11,Sven Aalto,Head of Growth,Tidemark,210,https://tidemark.io/about,P2,like,"",2026-05-26
+e12,Chloe Dubois,Student,University of Lyon,,https://example.edu/cdubois,P1,like,"",2026-05-15

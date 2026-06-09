@@ -157,7 +157,7 @@ def _discover_about_url(homepage: FetchResult, base_url: str) -> str | None:
     """Scan homepage links for an about / company / story page on the same domain."""
     base_host = urllib.parse.urlparse(base_url).hostname or ""
     patterns = re.compile(
-        r"/(about|company|story|team|who-we-are|our-story|mission|us)(/|$|\?)",
+        r"/(about[-\w]*|company|story|team|who-we-are|our-story|our-team|mission|us)(/|$|\?|#)",
         re.IGNORECASE,
     )
     for link in homepage.links:

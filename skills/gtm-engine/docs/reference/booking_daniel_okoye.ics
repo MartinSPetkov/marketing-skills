@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//GTM Engine//Outbound Engine//EN
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+UID:daniel-okoye-20260611@gtm-engine
+DTSTAMP:20260608T090000Z
+DTSTART:20260611T150000Z
+DTEND:20260611T153000Z
+SUMMARY:Catalyst x Brightloop: AI search visibility
+DESCRIPTION:Intro call booked from a LinkedIn signal. Daniel commented on the AI search post that Brightloop is invisible in ChatGPT for its category. Agenda: where Brightloop is missing on core category queries, who is winning them, and the fastest fixes.
+LOCATION:Google Meet
+ORGANIZER;CN=Catalyst:mailto:founder@example.com
+ATTENDEE;CN=Daniel Okoye;RSVP=TRUE:mailto:daniel@brightloop.io
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+END:VCALENDAR

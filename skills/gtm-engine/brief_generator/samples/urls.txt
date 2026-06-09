@@ -2,5 +2,5 @@
 # One URL per line. Lines starting with # are ignored.
 # Remove or replace these with URLs relevant to your own query.
 
-https://pact.io
-https://docs.pact.io
+https://www.gotcatalyst.com/
+https://www.gotcatalyst.com/resources

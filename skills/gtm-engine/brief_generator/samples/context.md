@@ -1,7 +1,7 @@
-# ApiPact
+# Catalyst
 
 Consumer-driven contract testing platform for microservice and API teams.
 
-ApiPact lets engineering teams define the exact API contract between each consumer and producer service, then enforce those contracts as automated tests in CI/CD. When a producer changes an endpoint, ApiPact identifies which consumer contracts break before the change reaches production — cutting integration failures by giving teams a precise, per-service breakage report rather than a failing end-to-end test suite.
+Catalyst (gotcatalyst.com) is a B2B marketing services company that builds inbound pipeline systems for high-growth software companies at Series A through C. Its work runs on three plays: executive content, AI search visibility, and original research. The goal is to make clients findable before a sales conversation starts.
 
-Homepage: https://apipact.io
+Homepage: https://www.gotcatalyst.com/
